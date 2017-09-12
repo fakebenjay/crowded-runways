@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Crowded Runways</title>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<style type="text/css">
+
+      #tooltip {
+        position: absolute;
+        width: 200px;
+        height: auto;
+        padding: 10px;
+        background-color: white;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        pointer-events: none;
+      }
+
+      #tooltip.hidden {
+        display: none;
+      }
+
+      #tooltip p {
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+      }
+		</style>
+	</head>
+	<body>
+    <div id="tooltip" class="hidden">
+			<p><strong id="text"></strong></p>
+		</div>
+		<script type="text/javascript">
+
+			//Width and height
+			var w = 1000;
+			var h = 600;
+
+			//Define map projection
+			var projection = d3.geoAlbersUsa()
+							   .translate([w/2, h/2])
+							   .scale([1000]);
+
+			//Define path generator
+			var path = d3.geoPath()
+							 .projection(projection);
+
+      //Define quantize scale to sort data values into buckets of color
+      var color = d3.scaleQuantize()
+         				.range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,44)"]);
+
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			//Load in GeoJSON data
+			d3.json("us-states.json", function(json) {
+
+				//Bind data and create one path per GeoJSON feature
+				svg.selectAll("path")
+				   .data(json.features)
+				   .enter()
+				   .append("path")
+				   .attr("d", path);
+
+			});
+
+      //Load in raw taxi data
+			d3.csv("109439354_T_ONTIME.csv", (data) => {
+
+        //Tabulate number of Springfields per state
+        var condensedData = {}
+
+        for (var i = 0; i < data.length; i++) {
+          let originCity = data[i].ORIGIN
+
+          if (condensedData[originCity] && data[i].TAXI_OUT) {
+            condensedData[originCity].avgAbleTakeoffs += 1
+						condensedData[originCity].totalTakeoffs += 1
+            condensedData[originCity].avgTaxiOut = (condensedData[originCity].avgTaxiOut * (condensedData[originCity].avgAbleTakeoffs - 1) + parseInt(data[i].TAXI_OUT)) / condensedData[originCity].avgAbleTakeoffs
+						if (parseInt(data[i].TAXI_OUT) > condensedData[originCity].longestTaxiOut) {condensedData[originCity].longestTaxiOut = parseInt(data[i].TAXI_OUT)}
+					} else if (!condensedData[originCity] && data[i].TAXI_OUT) {
+            condensedData[originCity]= {avgAbleTakeoffs: 1, totalTakeoffs: 1, avgTaxiOut: parseInt(data[i].TAXI_OUT), longestTaxiOut: parseInt(data[i].TAXI_OUT), airportCity: data[i].ORIGIN_CITY_NAME}
+          } else if (!condensedData[originCity] && !data[i].TAXI_OUT) {
+						condensedData[originCity]= {avgAbleTakeoffs: 0, totalTakeoffs: 1, avgTaxiOut: 0, longestTaxiOut: 0, airportCity: data[i].ORIGIN_CITY_NAME}
+					} else if (condensedData[originCity] && !data[i].TAXI_OUT) {
+						condensedData[originCity].totalTakeoffs += 1
+					}
+				}
+
+				for (var i = 0; i < data.length; i++) {
+					let destinationCity = data[i].DEST
+
+					if (condensedData[destinationCity].totalLandings && data[i].TAXI_IN) {
+						condensedData[destinationCity].avgAbleLandings += 1
+						condensedData[destinationCity].totalLandings += 1
+						condensedData[destinationCity].avgTaxiIn = (condensedData[destinationCity].avgTaxiIn * (condensedData[destinationCity].avgAbleLandings - 1) + parseInt(data[i].TAXI_IN)) / condensedData[destinationCity].avgAbleLandings
+						if (parseInt(data[i].TAXI_IN) > condensedData[destinationCity].longestTaxiIn) {condensedData[destinationCity].longestTaxiIn = parseInt(data[i].TAXI_IN)}
+					} else if (!condensedData[destinationCity].totalLandings && data[i].TAXI_IN) {
+						condensedData[destinationCity].avgAbleLandings= 1
+						condensedData[destinationCity].totalLandings = 1
+						condensedData[destinationCity].avgTaxiIn = parseInt(data[i].TAXI_IN)
+						condensedData[destinationCity].longestTaxiIn = parseInt(data[i].TAXI_IN)
+						condensedData[destinationCity].airportCity = data[i].DEST_CITY_NAME
+					} else if (!condensedData[destinationCity].totalLandings && !data[i].TAXI_IN) {
+						condensedData[destinationCity].avgAbleLandings= 0
+						condensedData[destinationCity].totalLandings = 1
+						condensedData[destinationCity].avgTaxiIn = 0
+						condensedData[destinationCity].longestTaxiIn = 0
+						condensedData[destinationCity].airportCity = data[i].DEST_CITY_NAME
+					} else if (condensedData[destinationCity].totalLandings && !data[i].TAXI_IN) {
+						condensedData[destinationCity].totalLandings += 1
+					}
+				}
+
+				d3.csv("global_airports.csv", (airports) => {
+					airports.forEach((a) => {
+						let airportCode = a.iata_faa
+
+						if (condensedData[airportCode]) {
+							condensedData[airportCode].airportName = a.name
+							condensedData[airportCode].lat = parseFloat(a.latitude)
+							condensedData[airportCode].lng = parseFloat(a.longitude)
+						}
+					})
+				})
+
+				console.log(condensedData)
+
+        //Set domain
+        color.domain([
+          d3.min(Object.values(condensedData), function(d) { return d; }),
+          d3.max(Object.values(condensedData), function(d) { return d; })
+        ]);
+      })
+		</script>
+	</body>
+</html>
