@@ -122,6 +122,12 @@
 					}
 				}
 
+				//Set domain
+				color.domain([
+					d3.min(Object.values(condensedData), function(d) { return d; }),
+					d3.max(Object.values(condensedData), function(d) { return d; })
+				]);
+
 				d3.csv("global_airports.csv", (airports) => {
 					airports.forEach((a) => {
 						let airportCode = a.iata_faa
@@ -133,14 +139,29 @@
 						}
 					})
 				})
-
 				console.log(condensedData)
 
-        //Set domain
-        color.domain([
-          d3.min(Object.values(condensedData), function(d) { return d; }),
-          d3.max(Object.values(condensedData), function(d) { return d; })
-        ]);
+				debugger
+
+				svg.selectAll("circle")
+					.data(condensedData)
+					.enter()
+					.append("circle")
+					.attr("cx", function(d) {
+						return projection([d.lng, d.lat])[0];
+					})
+					.attr("cy", function(d) {
+						return projection([d.lng, d.lat])[1];
+					})
+			 		.attr("r", 5)
+			 		.style("fill", "yellow")
+					.style("stroke", "gray")
+					.style("stroke-width", 0.25)
+					.style("opacity", 0.75)
+					.append("title")			//Simple tooltip
+				 	.text(function(d) {
+						return "This is a city!";
+					});
       })
 		</script>
 	</body>
