@@ -62,105 +62,69 @@
 						.attr("width", w)
 						.attr("height", h);
 
-			//Load in GeoJSON data
-			d3.json("us-states.json", function(json) {
+		//Load in raw taxi data
+		 d3.csv("monthly_data/01_2017.csv", (data) => {
 
-				//Bind data and create one path per GeoJSON feature
-				svg.selectAll("path")
-				   .data(json.features)
-				   .enter()
-				   .append("path")
-				   .attr("d", path);
+			 //Set domain
+			 color.domain([
+				 d3.min(data, function(d) { return d; }),
+				 d3.max(data, function(d) { return d; })
+			 ]);
 
+				//Load in GeoJSON data
+				d3.json("us-states.json", function(json) {
+
+					//Bind data and create one path per GeoJSON feature
+					svg.selectAll("path")
+					   .data(json.features)
+					   .enter()
+					   .append("path")
+					   .attr("d", path);
+
+					d3.csv("monthly_data/01_2017.csv", (data) => {
+						svg.selectAll("circle")
+ 						 .data(data)
+ 						 .enter()
+ 						 .append("circle")
+ 						 .attr("cx", function(d) {
+ 							 return projection([d.longitude, d.latitude])[0];
+ 						 })
+ 						 .attr("cy", function(d) {
+ 							 return projection([d.longitude, d.latitude])[1];
+ 						 })
+ 						 .attr("r", 5)
+ 						 .style("fill", "yellow")
+ 						 .style("stroke", "gray")
+ 						 .style("stroke-width", 0.25)
+ 						 .style("opacity", 0.75)
+						 .on("mouseover", (d) => {
+							 function secondizer(float) {
+								 return `${parseInt(float)} minutes and ${parseInt((float - parseInt(float)) * 60)} seconds`
+							 }
+
+							 var string = `${d.name} (${d.iata_faa}) in ${d.city_state}
+							 								Average Taxi Out: ${secondizer(d.avg_taxi_out)}
+															Average Taxi In: ${secondizer(d.avg_taxi_in)}
+															Longest Taxi Out: ${parseInt(d.longest_taxi_out)} minutes
+															Longest Taxi In: ${parseInt(d.longest_taxi_in)} minutes`
+
+							 var coordinates = [d3.event.clientX, d3.event.clientY]
+
+							 d3.select("#tooltip")
+								 .style("left", coordinates[0] + "px")
+								 .style("top", coordinates[1] + "px")
+								 .select("#text")
+								 .text(string)
+
+							 //Show the tooltip
+							 d3.select("#tooltip").classed("hidden", false);
+						})
+						.on("mouseout", (d) => {
+							 d3.select("#tooltip").classed("hidden", true);
+						})
+					 })
+				 })
 			});
-
-      //Load in raw taxi data
-			d3.csv("109439354_T_ONTIME.csv", (data) => {
-
-        //Tabulate takeoff, landing, and taxi time info
-        var condensedData = {}
-
-        for (var i = 0; i < data.length; i++) {
-          let originCity = data[i].ORIGIN
-
-          if (condensedData[originCity] && data[i].TAXI_OUT) {
-            condensedData[originCity].avgAbleTakeoffs += 1
-						condensedData[originCity].totalTakeoffs += 1
-            condensedData[originCity].avgTaxiOut = (condensedData[originCity].avgTaxiOut * (condensedData[originCity].avgAbleTakeoffs - 1) + parseInt(data[i].TAXI_OUT)) / condensedData[originCity].avgAbleTakeoffs
-						if (parseInt(data[i].TAXI_OUT) > condensedData[originCity].longestTaxiOut) {condensedData[originCity].longestTaxiOut = parseInt(data[i].TAXI_OUT)}
-					} else if (!condensedData[originCity] && data[i].TAXI_OUT) {
-            condensedData[originCity]= {avgAbleTakeoffs: 1, totalTakeoffs: 1, avgTaxiOut: parseInt(data[i].TAXI_OUT), longestTaxiOut: parseInt(data[i].TAXI_OUT), airportCity: data[i].ORIGIN_CITY_NAME}
-          } else if (!condensedData[originCity] && !data[i].TAXI_OUT) {
-						condensedData[originCity]= {avgAbleTakeoffs: 0, totalTakeoffs: 1, avgTaxiOut: 0, longestTaxiOut: 0, airportCity: data[i].ORIGIN_CITY_NAME}
-					} else if (condensedData[originCity] && !data[i].TAXI_OUT) {
-						condensedData[originCity].totalTakeoffs += 1
-					}
-				}
-
-				for (var i = 0; i < data.length; i++) {
-					let destinationCity = data[i].DEST
-
-					if (condensedData[destinationCity].totalLandings && data[i].TAXI_IN) {
-						condensedData[destinationCity].avgAbleLandings += 1
-						condensedData[destinationCity].totalLandings += 1
-						condensedData[destinationCity].avgTaxiIn = (condensedData[destinationCity].avgTaxiIn * (condensedData[destinationCity].avgAbleLandings - 1) + parseInt(data[i].TAXI_IN)) / condensedData[destinationCity].avgAbleLandings
-						if (parseInt(data[i].TAXI_IN) > condensedData[destinationCity].longestTaxiIn) {condensedData[destinationCity].longestTaxiIn = parseInt(data[i].TAXI_IN)}
-					} else if (!condensedData[destinationCity].totalLandings && data[i].TAXI_IN) {
-						condensedData[destinationCity].avgAbleLandings= 1
-						condensedData[destinationCity].totalLandings = 1
-						condensedData[destinationCity].avgTaxiIn = parseInt(data[i].TAXI_IN)
-						condensedData[destinationCity].longestTaxiIn = parseInt(data[i].TAXI_IN)
-						condensedData[destinationCity].airportCity = data[i].DEST_CITY_NAME
-					} else if (!condensedData[destinationCity].totalLandings && !data[i].TAXI_IN) {
-						condensedData[destinationCity].avgAbleLandings= 0
-						condensedData[destinationCity].totalLandings = 1
-						condensedData[destinationCity].avgTaxiIn = 0
-						condensedData[destinationCity].longestTaxiIn = 0
-						condensedData[destinationCity].airportCity = data[i].DEST_CITY_NAME
-					} else if (condensedData[destinationCity].totalLandings && !data[i].TAXI_IN) {
-						condensedData[destinationCity].totalLandings += 1
-					}
-				}
-
-				//Set domain
-				color.domain([
-					d3.min(Object.values(condensedData), function(d) { return d; }),
-					d3.max(Object.values(condensedData), function(d) { return d; })
-				]);
-
-				d3.csv("global_airports.csv", (airports) => {
-					airports.forEach((a) => {
-						let airportCode = a.iata_faa
-
-						if (condensedData[airportCode]) {
-							condensedData[airportCode].airportName = a.name
-							condensedData[airportCode].lat = parseFloat(a.latitude)
-							condensedData[airportCode].lng = parseFloat(a.longitude)
-						}
-					})
-				})
-				console.log(condensedData)
-
-				svg.selectAll("circle")
-					.data(condensedData)
-					.enter()
-					.append("circle")
-					.attr("cx", function(d) {
-						return projection(d.lng);
-					})
-					.attr("cy", function(d) {
-						return projection(d.lat);
-					})
-			 		.attr("r", 5)
-			 		.style("fill", "yellow")
-					.style("stroke", "gray")
-					.style("stroke-width", 0.25)
-					.style("opacity", 0.75)
-					.append("title")			//Simple tooltip
-				 	.text(function(d) {
-						return "This is a city!";
-					});
-      })
 		</script>
 	</body>
 </html>
