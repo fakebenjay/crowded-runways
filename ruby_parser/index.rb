@@ -1,5 +1,7 @@
 require 'csv'
 require 'pry'
+require 'fileutils'
+require 'tempfile'
 
 airports = CSV.read("../global_airports.csv")
 flights = CSV.read("../109439354_T_ONTIME.csv")
@@ -68,24 +70,19 @@ CSV.foreach('../109439354_T_ONTIME.csv', headers:true) do |row|
   end
 end
 
-CSV.open("../global_airports.csv", "w") do |f|
-  puts f
+puts condensed_data
+
+counter = 0
+
+CSV.open('../monthly_data/01_2017.csv', 'w') do |temp_csv|
+  CSV.foreach("../global_airports.csv") do |orig|
+    airport = orig[4]
+
+    if counter == 0
+      temp_csv << orig + ['city_state', 'avg_able_landings', 'avg_able_takeoffs', 'total_landings', 'total_takeoffs', 'avg_taxi_in', 'avg_taxi_out', 'longest_taxi_in', 'longest_taxi_out']
+    elsif counter > 0 && orig[4] == condensed_data.key(condensed_data[airport])
+      temp_csv << orig + [condensed_data[airport][:city_state], condensed_data[airport][:avg_able_landings], condensed_data[airport][:avg_able_takeoffs], condensed_data[airport][:total_landings], condensed_data[airport][:total_takeoffs], condensed_data[airport][:avg_taxi_in], condensed_data[airport][:avg_taxi_out], condensed_data[airport][:longest_taxi_in], condensed_data[airport][:longest_taxi_out]]
+    end
+    counter += 1
+  end
 end
-
-# CSV.foreach('../global_airports.csv', headers:true) do |row|
-#   airport_code = row[4]
-#   airport_name = row[1]
-#   latitude = row[6]
-#   longitude = row[7]
-#
-#   if condensed_data[airport_code]
-#     condensed_data[airport_code][:name] = airport_name
-#     condensed_data[airport_code][:lat] = latitude
-#     condensed_data[airport_code][:lng] = longitude
-#   end
-# end
-
-# puts condensed_data
-
-# condensed_data.each do |airport|
-# end
