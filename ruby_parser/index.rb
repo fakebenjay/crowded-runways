@@ -80,7 +80,7 @@ CSV.open('../monthly_data/01_2017.csv', 'w') do |temp_csv|
 
     if counter == 0
       temp_csv << orig + ['city_state', 'avg_able_landings', 'avg_able_takeoffs', 'total_landings', 'total_takeoffs', 'avg_taxi_in', 'avg_taxi_out', 'longest_taxi_in', 'longest_taxi_out']
-    elsif counter > 0 && orig[4] == condensed_data.key(condensed_data[airport])
+    elsif counter > 0 && orig[4] == condensed_data.key(condensed_data[airport]) && condensed_data[airport][:total_landings] && condensed_data[airport][:total_takeoffs]
       temp_csv << orig + [condensed_data[airport][:city_state], condensed_data[airport][:avg_able_landings], condensed_data[airport][:avg_able_takeoffs], condensed_data[airport][:total_landings], condensed_data[airport][:total_takeoffs], condensed_data[airport][:avg_taxi_in], condensed_data[airport][:avg_taxi_out], condensed_data[airport][:longest_taxi_in], condensed_data[airport][:longest_taxi_out]]
     end
     counter += 1
