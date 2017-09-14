@@ -228,7 +228,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 3502,Dallas Love Field,Dallas,United States,DAL,KDAL,32.847111,-96.851778,487,-6,A
 3627,James M Cox Dayton International,Dayton,United States,DAY,KDAY,39.902375,-84.219375,1009,-5,A
 4388,Dubuque Regional,Dubuque IA,United States,DBQ,KDBQ,42.402,-90.709472,1076,-6,A
-3520,Ronald Reagan Washington Natl,Washington,United States,DCA,KDCA,38.852083,-77.037722,15,-5,A
+3520,Ronald Reagan Washington National,Washington,United States,DCA,KDCA,38.852083,-77.037722,15,-5,A
 5733,Dodge City Regional Airport,Dodge City,United States,DDC,KDDC,37.7634,-99.9656,2594,-6,A
 4042,Decatur,Decatur,United States,DEC,KDEC,39.834564,-88.865689,682,-6,A
 6755,Deering Airport,Deering,United States,DEE,PADE,66.0696,-162.766,21,-9,A
@@ -410,7 +410,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 3871,Grissom ARB,Peru,United States,GUS,KGUS,40.648094,-86.152119,812,-5,A
 8308,Lee Gilmer Memorial Airport,Gainesville,United States,GVL,KGVL,34.272627,-83.8302233,1276,-4,A
 3735,Majors,Greenvile,United States,GVT,KGVT,33.067839,-96.065333,535,-6,A
-3588,Greenwood Leflore,Greenwood,United States,GWO,KGWO,33.494328,-90.084706,162,-6,A
+3588,Greenwood LeFlore,Greenwood,United States,GWO,KGWO,33.494328,-90.084706,162,-6,A
 6956,Gary Chicago International Airport,Gary,United States,GYY,KGYY,41.6163,-87.4128,591,-6,U
 3850,Hobart Municipal,Hobart,United States,HBR,KHBR,34.991308,-99.051353,1564,-6,A
 8056,Columbia County,Hudson NY,United States,HCC,,42.2913,-73.7103,198,-4,A
@@ -504,7 +504,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 6993,Kissimmee Gateway Airport,Kissimmee,United States,ISM,KISM,28.289806,-81.437083,82,-5,A
 3659,Sloulin Field International,Williston,United States,ISN,KISN,48.177939,-103.642347,1982,-7,A
 7522,Kinston Regional Jetport,Kinston,United States,ISO,KISO,35.331389,-77.608889,94,7,A
-3857,Long Island Mac Arthur,Islip,United States,ISP,KISP,40.79525,-73.100222,99,-5,A
+3857,Long Island MacArthur,Islip,United States,ISP,KISP,40.79525,-73.100222,99,-5,A
 3947,Ithaca Tompkins Regional,Ithaca,United States,ITH,KITH,42.491028,-76.458444,1099,-5,A
 3415,Hilo International,Hilo,United States,ITO,PHTO,19.721375,-155.048469,38,-10,N
 6851,Gogebic Iron County Airport,Ironwood,United States,IWD,,46.5274747,-90.1313967,1230,-6,U
@@ -681,10 +681,10 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 3717,General Mitchell International,Milwaukee,United States,MKE,KMKE,42.947222,-87.896583,723,-6,A
 5754,Muskegon County Airport,Muskegon,United States,MKG,KMKG,43.1695,-86.2382,628,-5,A
 3705,Molokai,Molokai,United States,MKK,PHMK,21.152886,-157.096256,454,-10,N
-3704,Mc Kellar Sipes Regional,Jackson,United States,MKL,KMKL,35.599889,-88.915611,434,-6,A
+3704,McKellar Sipes Regional,Jackson,United States,MKL,KMKL,35.599889,-88.915611,434,-6,A
 3534,Davis Field,Muskogee,United States,MKO,KMKO,35.656489,-95.366656,612,-6,A
 3671,Melbourne International,Melbourne,United States,MLB,KMLB,28.102753,-80.645258,33,-5,A
-3629,Mc Alester Regional,Mcalester,United States,MLC,KMLC,34.882403,-95.783463,770,-6,A
+3629,McAlester Regional,Mcalester,United States,MLC,KMLC,34.882403,-95.783463,770,-6,A
 7000,Malad City,Malad City,United States,MLD,KMLD,42.17,-112.289,4503,-7,A
 4072,Quad City International,Moline,United States,MLI,KMLI,41.448528,-90.507539,590,-6,A
 8303,Baldwin County Airport,Milledgeville,United States,MLJ,KMLJ,33.154225,-83.2414139,385,-4,A
@@ -696,7 +696,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 7081,Mammoth Yosemite Airport,Mammoth Lakes,United States,MMH,KMMH,37.624049,-118.837772,7128,-8,A
 7984,McMinn Co,Athens,United States,MMI,KMMI,35.39919,-84.56177,874,-5,N
 7657,Morristown Municipal Airport,Morristown,United States,MMU,KMMU,40.79935,-74.4148747,187,-5,A
-3883,Mc Minnville Municipal,Mackminnville,United States,MMV,KMMV,45.194444,-123.135944,163,-8,A
+3883,McMinnville Municipal,Mackminnville,United States,MMV,KMMV,45.194444,-123.135944,163,-8,A
 3618,Menominee Marinette Twin Co,Macon,United States,MNM,KMNM,45.12665,-87.638443,625,-5,A
 7110,Minto Airport,Minto,United States,MNT,,65.143611,-149.37,460,-9,A
 3782,Mobile Regional,Mobile,United States,MOB,KMOB,30.691231,-88.242814,219,-6,A
@@ -934,7 +934,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 7849,Richard Lloyd Jones Jr Airport,Tulsa,United States,RVS,KRVS,36.0396111,-95.9846389,638,-5,A
 7690,Rocky Mount Wilson Regional Airport,Rocky Mount,United States,RWI,KRWI,35.8563,-77.8919,159,-5,A
 7986,Rawlins Municipal Airport-Harvey Field,Rawlins,United States,RWL,KFWL,41.8055975,-107.19994,6813,-7,A
-7712,Cobb County Airport-Mc Collum Field,Atlanta,United States,RYY,KRYY,34.0131569,-84.5970556,1041,-5,A
+7712,Cobb County Airport-McCollum Field,Atlanta,United States,RYY,KRYY,34.0131569,-84.5970556,1041,-5,A
 7653,Shively Field Airport,SARATOGA,United States,SAA,KSAA,41.4448594,-106.8235264,7012,-6,A
 3663,Sacramento Executive,Sacramento,United States,SAC,KSAC,38.512524,-121.49347,24,-8,A
 3784,Santa Fe Municipal,Santa Fe,United States,SAF,KSAF,35.617108,-106.089422,6348,-7,A
@@ -966,7 +966,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 4269,Sanford Regional,Sanford ME,United States,SFM,,43.39383,-70.708,244,-5,A
 3469,San Francisco International,San Francisco,United States,SFO,KSFO,37.618972,-122.374889,13,-8,A
 3781,North Central State,Smithfield,United States,SFZ,KSFZ,41.920764,-71.491381,441,-5,A
-4348,Springfield Branson Natl,Springfield,United States,SGF,KSGF,37.245667,-93.388639,1268,-6,A
+4348,Springfield Branson National,Springfield,United States,SGF,KSGF,37.245667,-93.388639,1268,-6,A
 7908,Springfield-Beckly Municipal Airport,Springfield,United States,SGH,KSGH,39.8402778,-83.8401667,1051,-5,A
 8268,St. Augustine Airport,St. Augustine,United States,SGJ,,29.95925,-81.3397222,10,-5,A
 4220,Sugar Land Regional Airport,Sugar Land,United States,SGR,KSGR,29.62225,-95.6565278,82,-6,A
@@ -997,7 +997,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 7080,Lemhi County Airport,Salmon,United States,SMN,KSMN,45.123889,-113.881389,4043,-7,A
 7647,Santa Monica Municipal Airport,Santa Monica,United States,SMO,KSMO,34.0158333,-118.4513056,177,-7,A
 5772,Santa Maria Pub Cpt G Allan Hancock Airport,Santa Maria,United States,SMX,KSMX,34.8989,-120.457,261,-8,A
-3867,John Wayne Arpt Orange Co,Santa Ana,United States,SNA,KSNA,33.675667,-117.868222,56,-8,A
+3867,John Wayne Airport Orange Co,Santa Ana,United States,SNA,KSNA,33.675667,-117.868222,56,-8,A
 3426,St Paul Island,St. Paul Island,United States,SNP,PASN,57.167333,-170.220444,63,-11,A
 7078,Show Low Regional Airport,Show Low,United States,SOW,KSOW,34.265556,-110.005556,6415,-7,A
 3616,Scappoose Industrial Airpark,San Luis,United States,SPB,KSPB,45.771028,-122.861833,58,-8,A
@@ -1038,10 +1038,10 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 3586,Whiteman AFB,Knobnoster,United States,SZL,KSZL,38.730306,-93.547864,870,-6,A
 7113,Tanana Airport,Tanana,United States,TAL,,65.179556,-152.075833,207,-9,A
 8276,Taunton Municipal Airport - King Field,Taunton,United States,TAN,KTAN,41.8744017,-71.0166453,43,-4,A
-3665,Waynesville Regional Arpt At Forney Field,Fort Leonardwood,United States,TBN,KTBN,37.741631,-92.140736,1159,-6,A
+3665,Waynesville Regional Airport At Forney Field,Fort Leonardwood,United States,TBN,KTBN,37.741631,-92.140736,1159,-6,A
 3773,Tucumcari Municipal,Tucumcari,United States,TCC,KTCC,35.182777,-103.603186,4065,-7,A
 4387,Tuscaloosa Regional,Tuscaloosa AL,United States,TCL,KTCL,33.220627,-87.611403,170,-6,A
-3672,Mc Chord AFB,Tacoma,United States,TCM,KTCM,47.137678,-122.476475,322,-8,A
+3672,McChord AFB,Tacoma,United States,TCM,KTCM,47.137678,-122.476475,322,-8,A
 3755,Truth Or Consequences Municipal,Truth Or Consequences,United States,TCS,KTCS,33.236944,-107.27175,4853,-7,A
 7215,Takotna Airport,Takotna,United States,TCT,,62.971944,-156.082778,825,-9,A
 3624,Teterboro,Teterboro,United States,TEB,KTEB,40.850103,-74.060837,9,-5,A
@@ -1050,7 +1050,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 3525,Tinker AFB,Oklahoma City,United States,TIK,KTIK,35.414739,-97.386633,1291,-6,A
 4004,Talkeetna,Talkeetna,United States,TKA,PATK,62.3205,-150.093694,358,-9,A
 7137,Tenakee Seaplane Base,Tenakee Springs,United States,TKE,,57.779722,-135.218333,0,-9,A
-7935,Collin County Regional Airport at Mc Kinney,DALLAS,United States,TKI,KTKI,33.1779444,-96.5905278,585,-6,A
+7935,Collin County Regional Airport at McKinney,DALLAS,United States,TKI,KTKI,33.1779444,-96.5905278,585,-6,A
 7186,Teller Airport,Teller,United States,TLA,PATE,65.240278,-166.339444,294,-9,A
 3698,Tallahassee Regional,Tallahassee,United States,TLH,KTLH,30.396528,-84.350333,81,-5,A
 3423,Tatalina LRRS,Tatalina,United States,TLJ,PATL,62.894369,-155.976525,964,-9,A
@@ -1062,7 +1062,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 3721,Dade Collier Training And Transition,Miami,United States,TNT,KTNT,25.861806,-80.897,13,-5,A
 3592,Tonopah Test Range,Tonopah,United States,TNX,KTNX,37.798836,-116.78075,5549,-8,A
 7053,Zamperini Field Airport,Torrance,United States,TOA,KTOA,33.803392,-118.339611,101,-8,A
-8322,Toccoa RG Letourneau Field Airport,Toccoa,United States,TOC,KTOC,34.5928117,-83.2963717,996,-4,A
+8322,Toccoa RG LeTourneau Field Airport,Toccoa,United States,TOC,KTOC,34.5928117,-83.2963717,996,-4,A
 6767,Togiak Airport,Togiak Village,United States,TOG,PATG,59.0528,-160.397,21,-9,A
 4040,Toledo,Toledo,United States,TOL,KTOL,41.586806,-83.807833,684,-5,A
 7925,Philip Billard Municipal,Topeka,United States,TOP,KTOP,39.068657,-95.622482,881,-6,A
@@ -1086,7 +1086,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 3770,Texarkana Regional Webb Field,Texarkana,United States,TXK,KTXK,33.453722,-93.991028,390,-6,A
 6882,Tyonek Airport,Tyonek,United States,TYE,,61.076667,-151.138056,110,-8,A
 3848,Tyler Pounds Regional,Tyler,United States,TYR,KTYR,32.354139,-95.402386,544,-6,A
-3676,Mc Ghee Tyson,Knoxville,United States,TYS,KTYS,35.810972,-83.994028,981,-5,A
+3676,McGhee Tyson,Knoxville,United States,TYS,KTYS,35.810972,-83.994028,981,-5,A
 8222,Mountain Home Municipal Airport,Mountain Home,United States,U76,,43.1316111,-115.7305671,3167,-7,A
 7648,Bermuda Dunes Airport,Palm Springs,United States,UDD,KUDD,33.7484375,-116.2748133,73,-7,A
 8313,Darlington County Jetport,Darlington,United States,UDG,KUDG,34.4493845,-79.8900608,192,-4,A
@@ -1134,7 +1134,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 7188,White Mountain Airport,White Mountain,United States,WMO,PAWM,64.689167,-163.412778,267,-9,A
 3884,Robins AFB,Macon,United States,WRB,KWRB,32.640144,-83.59185,294,-5,A
 5969,Wrangell Airport,Wrangell,United States,WRG,PAWG,56.4843,-132.37,44,-9,A
-3655,Mc Guire AFB,Wrightstown,United States,WRI,KWRI,40.015556,-74.591667,131,-5,A
+3655,McGuire AFB,Wrightstown,United States,WRI,KWRI,40.015556,-74.591667,131,-5,A
 5777,Worland Municipal Airport,Worland,United States,WRL,KWRL,43.9657,-107.951,4227,-7,A
 3853,Condron AAF,White Sands,United States,WSD,KWSD,32.341484,-106.40277,3934,-7,A
 7174,San Juan - Uganik Seaplane Base,San Juan,United States,WSJ,,57.730278,-153.320556,0,-9,A

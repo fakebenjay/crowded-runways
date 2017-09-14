@@ -16,7 +16,9 @@
 				color: white;
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
-        border-radius: 0px;
+        border-radius: 15px;
+				border-style: solid;
+    		border-color: white;
         -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
@@ -43,7 +45,8 @@
 			<span id="text-1"></span><br>
 			<span id="text-2"></span><br>
 			<span id="text-3"></span><br>
-			<span id="text-4"></span>
+			<span id="text-4"></span><br></br>
+			<small id="text-5"></span>
 		</div>
 		<script type="text/javascript">
 
@@ -80,8 +83,6 @@
 				 d3.max(taxiRange, function(d) { return d; })
 			 ]);
 
-			 debugger
-
 				//Load in GeoJSON data
 				d3.json("us-states.json", function(json) {
 
@@ -113,7 +114,6 @@
  						 .style("stroke-width", 0.25)
  						 .style("opacity", 0.85)
 						 .on("mouseover", (d) => {
-
 							 function hourPlur(float) {
 							   if (parseInt(float) > 1) {
 							     return `${parseInt(float)} hours`
@@ -139,7 +139,7 @@
 							 }
 
 							 function secondizer(float) {
-							   if (parseInt(float) > 60 && parseInt((float - parseInt(float)) * 60) === 0) {
+							   if (parseInt(float) > 60 && parseInt(float) % 60 !== 0 && parseInt((float - parseInt(float)) * 60) === 0) {
 							     return `${hourPlur(parseInt(float/60))}, ${minPlur(parseInt(float) % 60)}`
 							   } else if (parseInt(float) < 60 && parseInt((float - parseInt(float)) * 60) > 0) {
 							     return `${minPlur(parseInt(float))}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
@@ -147,9 +147,9 @@
 							     return `${hourPlur(parseInt(float/60))}, ${minPlur(parseInt(float) % 60)}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
 							   } else if (parseInt(float) < 60 && parseInt((float - parseInt(float)) * 60) === 0) {
 							     return `${minPlur(parseInt(float))}`
-							   } else if (parseInt(float) === 60 && parseInt((float - parseInt(float)) * 60) === 0) {
+							   } else if (parseInt(float) % 60 === 0 && parseInt((float - parseInt(float)) * 60) === 0) {
 							     return `${hourPlur((float/60))}`
-							   } else if (parseInt(float) === 60 && parseInt((float - parseInt(float)) * 60) > 0) {
+							   } else if (parseInt(float) % 60 === 0 && parseInt((float - parseInt(float)) * 60) > 0) {
 							     return `${hourPlur(parseInt(float/60))}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
 							   }
 							 }
@@ -158,16 +158,27 @@
 							 var airport = `${d.name} in ${d.city_state}`
 							 var avgTaxiOut = `Average Taxi Out: ${secondizer(d.avg_taxi_out)}`
 							 var avgTaxiIn = `Average Taxi In: ${secondizer(d.avg_taxi_in)}`
-							 var longestTaxiOut = `Longest Taxi Out: ${secondizer(d.longest_taxi_out)}`
-							 var longestTaxiIn = `Longest Taxi In: ${secondizer(d.longest_taxi_in)}`
+							 var longestTaxiOut = `Longest Taxi Out: ${secondizer(d.longest_taxi_out)} (on ${d.lng_tx_out_date})`
+							 var longestTaxiIn = `Longest Taxi In: ${secondizer(d.longest_taxi_in)} (on ${d.lng_tx_in_date})`
+							 var takeoffsLandings = `Total Takeoffs: ${d.total_takeoffs}, Total Landings: ${d.total_landings}`
 
 							 var coordinates = [d3.event.clientX, d3.event.clientY]
+							 var divOffset = 215
+							 var windowHeight = document.body.clientHeight
 
-							 d3.select("#tooltip")
-								 .style("left", coordinates[0] + "px")
-								 .style("top", coordinates[1] + "px")
-								 .select("h1#airport-code")
-								 .text(airportCode)
+							 if (coordinates[1] + divOffset > windowHeight) {
+								 d3.select("#tooltip")
+									 .style("left", coordinates[0] + "px")
+									 .style("top", (coordinates[1] - divOffset) + "px")
+									 .select("h1#airport-code")
+									 .text(airportCode)
+							 } else {
+								 d3.select("#tooltip")
+									 .style("left", coordinates[0] + "px")
+									 .style("top", coordinates[1] + "px")
+									 .select("h1#airport-code")
+									 .text(airportCode)
+							 }
 
 							 d3.select("#tooltip")
 								 .select("h3#location")
@@ -188,6 +199,10 @@
 							 d3.select("#tooltip")
 								 .select("span#text-4")
 								 .text(longestTaxiIn)
+
+							 d3.select("#tooltip")
+								 .select("small#text-5")
+								 .text(takeoffsLandings)
 
 							 //Show the tooltip
 							 d3.select("#tooltip").classed("hidden", false);
