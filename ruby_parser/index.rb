@@ -86,7 +86,7 @@ CSV.open('../monthly_data/01_2017.csv', 'w') do |temp_csv|
 
     if counter == 0
       temp_csv << orig + ['city_state', 'avg_able_landings', 'avg_able_takeoffs', 'total_landings', 'total_takeoffs', 'avg_taxi_in', 'avg_taxi_out', 'longest_taxi_in', 'longest_taxi_out', 'lng_tx_in_date', 'lng_tx_out_date']
-    elsif counter > 0 && orig[4] == condensed_data.key(condensed_data[airport]) && condensed_data[airport][:total_landings] && condensed_data[airport][:total_takeoffs]
+    elsif counter > 0 && orig[4] == condensed_data.key(condensed_data[airport]) && condensed_data[airport][:total_landings] && condensed_data[airport][:total_takeoffs] ## Ensures that every airport has and a landing and a takeoff, filters out TKI
       temp_csv << orig + [condensed_data[airport][:city_state], condensed_data[airport][:avg_able_landings], condensed_data[airport][:avg_able_takeoffs], condensed_data[airport][:total_landings], condensed_data[airport][:total_takeoffs], condensed_data[airport][:avg_taxi_in], condensed_data[airport][:avg_taxi_out], condensed_data[airport][:longest_taxi_in], condensed_data[airport][:longest_taxi_out], condensed_data[airport][:lng_tx_in_date], condensed_data[airport][:lng_tx_out_date]]
     end
     counter += 1
