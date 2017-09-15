@@ -7,6 +7,15 @@
 		<style type="text/css">
 			@import url('https://fonts.googleapis.com/css?family=Overpass');
 
+			body {
+				font-family: 'Overpass', sans-serif;
+			}
+
+			h1, h3, h4 {
+				padding: 0px;
+    		margin: 0px;
+			}
+
       #tooltip {
         position: absolute;
         width: auto;
@@ -23,7 +32,6 @@
         -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         pointer-events: none;
-				font-family: 'Overpass', sans-serif;
       }
 
       #tooltip.hidden {
@@ -39,180 +47,268 @@
 		</style>
 	</head>
 	<body>
-    <div id="tooltip" class="hidden">
-			<h1 id="airport-code"></h1>
-			<h3 id="location"></h3>
-			<span id="text-1"></span><br>
-			<span id="text-2"></span><br>
-			<span id="text-3"></span><br>
-			<span id="text-4"></span><br></br>
-			<small id="text-5"></span>
+	<div id="container" style="width:100%;">
+		<div id="left" style="float:left; width:12%; background-color:yellow;">
+			<h3>Crowded Runways</h3>
+			<br>
+			<form>
+				<label>Year</label>
+				<select>
+					<option>2020</option>
+				</select>
+			</form>
+			<br>
+			<form>
+				<label>Month</label>
+				<select>
+					<option>Smarch</option>
+				</select>
+			</form>
+			<br>
+			<form>
+				<div>
+					<label>Color Scale</label><br>
+					<input type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
+					<input type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
+					<input type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
+					<input type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
+				</div>
+			</form>
 		</div>
-		<script type="text/javascript">
+		<div id="right" style="float:right; width:88%;">
+			<div id="tooltip" class="hidden">
+				<h1 id="airport-code"></h1>
+				<h3 id="location"></h3>
+				<h4 id="city-state"></h3><br>
+				<span id="text-1"></span><br>
+				<span id="text-2"></span><br>
+				<span id="text-3"></span><small id="date-1"></small><br>
+				<span id="text-4"></span><small id="date-2"></small><br></br>
+				<small id="text-5"></span>
+				</div>
+				<script type="text/javascript">
 
-			//Width and height
-			var w = 1000;
-			var h = 600;
+				//Width and height
+				var w = 1000;
+				var h = 600;
 
-			//Define map projection
-			var projection = d3.geoAlbersUsa()
-							   .translate([w/2, h/2])
-							   .scale([1000]);
+				//Define map projection
+				var projection = d3.geoAlbersUsa()
+				.translate([w/2, h/2])
+				.scale([1000]);
 
-			//Define path generator
-			var path = d3.geoPath()
-							 .projection(projection);
+				//Define path generator
+				var path = d3.geoPath()
+				.projection(projection);
 
-      //Define quantize scale to sort data values into buckets of color
-      var color = d3.scaleQuantize()
-         				.range(['#63C246', '#8DFA56', '#D0FC5A', '#FFFE56', '#F3B641', '#E58849', '#E73225']);
+				//Define quantize scale to sort data values into buckets of color
+				var color = d3.scaleQuantize()
+				.range(['#63C246', '#8DFA56', '#D0FC5A', '#FFFE56', '#F3B641', '#E58849', '#E73225']);
 
-			//Create SVG element
-			var svg = d3.select("body")
-						.append("svg")
-						.attr("width", w)
-						.attr("height", h);
+				//Create SVG element
+				var svg = d3.select("div#right")
+				.append("svg")
+				.attr("width", w)
+				.attr("height", h);
 
-		//Load in raw taxi data
-		 d3.csv("monthly_data/01_2017.csv", (data) => {
-			 var taxiRange = data.map((d) => {return parseFloat(d.avg_taxi_out)})
+				//Load in raw taxi data
+				d3.csv("monthly_data/2017_01.csv", (data) => {
+					var avgTaxiOutRange = data.map((d) => {return parseFloat(d.avg_taxi_out)})
 
-			 //Set domain
-			 color.domain([
-				 d3.min(taxiRange, function(d) { return d; }),
-				 d3.max(taxiRange, function(d) { return d; })
-			 ]);
+				//Set domain
+					color.domain([
+						d3.min(avgTaxiOutRange, function(d) { return d; }),
+						d3.max(avgTaxiOutRange, function(d) { return d; })
+					]);
 
-				//Load in GeoJSON data
-				d3.json("us-states.json", function(json) {
+					//Load in GeoJSON data
+					d3.json("us-states.json", function(json) {
 
-					//Bind data and create one path per GeoJSON feature
-					svg.selectAll("path")
-					   .data(json.features)
-					   .enter()
-					   .append("path")
-					   .attr("d", path)
-						 .style("fill", "#3768B7");
+						//Bind data and create one path per GeoJSON feature
+						svg.selectAll("path")
+						.data(json.features)
+						.enter()
+						.append("path")
+						.attr("d", path)
+						.style("fill", "#3768B7");
 
-					d3.csv("monthly_data/01_2017.csv", (data) => {
-						svg.selectAll("circle")
- 						 .data(data)
- 						 .enter()
- 						 .append("circle")
- 						 .attr("cx", function(d) {
- 							 return projection([d.longitude, d.latitude])[0];
- 						 })
- 						 .attr("cy", function(d) {
- 							 return projection([d.longitude, d.latitude])[1];
- 						 })
- 						 .attr("r", 5)
- 						 .style("fill", (d) => {
-							 var value = d.avg_taxi_out;
-							 return color(value)
-						 })
- 						 .style("stroke", "gray")
- 						 .style("stroke-width", 0.25)
- 						 .style("opacity", 0.85)
-						 .on("mouseover", (d) => {
-							 function hourPlur(float) {
-							   if (parseInt(float) > 1) {
-							     return `${parseInt(float)} hours`
-							   } else {
-							     return `${parseInt(float)} hour`
-							   }
-							 }
+						d3.csv("monthly_data/2017_01.csv", (data) => {
+							data.sort((a, b) => {return a.total_takeoffs - b.total_takeoffs})
+							svg.selectAll("circle")
+							.data(data)
+							.enter()
+							.append("circle")
+							.attr("cx", function(d) {
+								return projection([d.longitude, d.latitude])[0];
+							})
+							.attr("cy", function(d) {
+								return projection([d.longitude, d.latitude])[1];
+							})
+							.attr("r", 5)
+							.style("fill", (d) => {
+								var value = d.avg_taxi_out;
+								return color(value)
+							})
+							.style("stroke", "gray")
+							.style("stroke-width", 0.25)
+							.style("opacity", 0.85)
+							.on("mouseover", (d) => {
+								function hourPlur(float) {
+									if (parseInt(float) > 1) {
+										return `${parseInt(float)} hours`
+									} else {
+										return `${parseInt(float)} hour`
+									}
+								}
 
-							 function minPlur(float) {
-							   if (parseInt(float) > 1) {
-							     return `${parseInt(float)} minutes`
-							   } else {
-							     return `${parseInt(float)} minute`
-							   }
-							 }
+								function minPlur(float) {
+									if (parseInt(float) > 1) {
+										return `${parseInt(float)} minutes`
+									} else {
+										return `${parseInt(float)} minute`
+									}
+								}
 
-							 function secPlur(float) {
-							   if (parseInt(float) > 1) {
-							     return `${parseInt(float)} seconds`
-							   } else {
-							     return `${parseInt(float)} second`
-							   }
-							 }
+								function secPlur(float) {
+									if (parseInt(float) > 1) {
+										return `${parseInt(float)} seconds`
+									} else {
+										return `${parseInt(float)} second`
+									}
+								}
 
-							 function secondizer(float) {
-							   if (parseInt(float) > 60 && parseInt(float) % 60 !== 0 && parseInt((float - parseInt(float)) * 60) === 0) {
-							     return `${hourPlur(parseInt(float/60))}, ${minPlur(parseInt(float) % 60)}`
-							   } else if (parseInt(float) < 60 && parseInt((float - parseInt(float)) * 60) > 0) {
-							     return `${minPlur(parseInt(float))}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
-							   } else if (parseInt(float) > 60 && parseInt((float - parseInt(float)) * 60) > 0) {
-							     return `${hourPlur(parseInt(float/60))}, ${minPlur(parseInt(float) % 60)}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
-							   } else if (parseInt(float) < 60 && parseInt((float - parseInt(float)) * 60) === 0) {
-							     return `${minPlur(parseInt(float))}`
-							   } else if (parseInt(float) % 60 === 0 && parseInt((float - parseInt(float)) * 60) === 0) {
-							     return `${hourPlur((float/60))}`
-							   } else if (parseInt(float) % 60 === 0 && parseInt((float - parseInt(float)) * 60) > 0) {
-							     return `${hourPlur(parseInt(float/60))}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
-							   }
-							 }
+								function secondizer(float) {
+									if (parseInt(float) > 60 && parseInt(float) % 60 !== 0 && parseInt((float - parseInt(float)) * 60) === 0) {
+										return `${hourPlur(parseInt(float/60))}, ${minPlur(parseInt(float) % 60)}`
+									} else if (parseInt(float) < 60 && parseInt((float - parseInt(float)) * 60) > 0) {
+										return `${minPlur(parseInt(float))}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
+									} else if (parseInt(float) > 60 && parseInt((float - parseInt(float)) * 60) > 0) {
+										return `${hourPlur(parseInt(float/60))}, ${minPlur(parseInt(float) % 60)}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
+									} else if (parseInt(float) < 60 && parseInt((float - parseInt(float)) * 60) === 0) {
+										return `${minPlur(parseInt(float))}`
+									} else if (parseInt(float) % 60 === 0 && parseInt((float - parseInt(float)) * 60) === 0) {
+										return `${hourPlur((float/60))}`
+									} else if (parseInt(float) % 60 === 0 && parseInt((float - parseInt(float)) * 60) > 0) {
+										return `${hourPlur(parseInt(float/60))}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
+									}
+								}
 
-							 var airportCode = `${d.iata_faa}`
-							 var airport = `${d.name} in ${d.city_state}`
-							 var avgTaxiOut = `Average Taxi Out: ${secondizer(d.avg_taxi_out)}`
-							 var avgTaxiIn = `Average Taxi In: ${secondizer(d.avg_taxi_in)}`
-							 var longestTaxiOut = `Longest Taxi Out: ${secondizer(d.longest_taxi_out)} (on ${d.lng_tx_out_date})`
-							 var longestTaxiIn = `Longest Taxi In: ${secondizer(d.longest_taxi_in)} (on ${d.lng_tx_in_date})`
-							 var takeoffsLandings = `Total Takeoffs: ${d.total_takeoffs}, Total Landings: ${d.total_landings}`
+								var airportCode = `${d.iata_faa}`
+								var airport = `${d.name}`
+								var cityState = `${d.city_state}`
+								var avgTaxiOut = `Average Taxi Out: ${secondizer(d.avg_taxi_out)}`
+								var avgTaxiIn = `Average Taxi In: ${secondizer(d.avg_taxi_in)}`
+								var longestTaxiOut = `Longest Taxi Out: ${secondizer(d.longest_taxi_out)} (${d.lng_tx_out_date})`
+								var longestTaxiIn = `Longest Taxi In: ${secondizer(d.longest_taxi_in)} (${d.lng_tx_in_date})`
+								var takeoffsLandings = `Total Takeoffs: ${d.total_takeoffs}, Total Landings: ${d.total_landings}`
 
-							 var coordinates = [d3.event.clientX, d3.event.clientY]
-							 var divOffset = 215
-							 var windowHeight = document.body.clientHeight
+								var coordinates = [d3.event.clientX, d3.event.clientY]
+								var divOffset = 220
+								var windowHeight = document.getElementById('right').clientHeight
 
-							 if (coordinates[1] + divOffset > windowHeight) {
-								 d3.select("#tooltip")
-									 .style("left", coordinates[0] + "px")
-									 .style("top", (coordinates[1] - divOffset) + "px")
-									 .select("h1#airport-code")
-									 .text(airportCode)
-							 } else {
-								 d3.select("#tooltip")
-									 .style("left", coordinates[0] + "px")
-									 .style("top", coordinates[1] + "px")
-									 .select("h1#airport-code")
-									 .text(airportCode)
-							 }
+								if (coordinates[1] + divOffset > windowHeight) {
+									d3.select("#tooltip")
+									.style("left", coordinates[0] + "px")
+									.style("top", (coordinates[1] - divOffset) + "px")
+									.select("h1#airport-code")
+									.text(airportCode)
+								} else {
+									d3.select("#tooltip")
+									.style("left", coordinates[0] + "px")
+									.style("top", coordinates[1] + "px")
+									.select("h1#airport-code")
+									.text(airportCode)
+								}
 
-							 d3.select("#tooltip")
-								 .select("h3#location")
-								 .text(airport)
+								d3.select("#tooltip")
+								.select("h3#location")
+								.text(airport)
 
-							 d3.select("#tooltip")
-								 .select("span#text-1")
-								 .text(avgTaxiOut)
+								d3.select("#tooltip")
+								.select("h4#city-state")
+								.text(cityState)
 
-							 d3.select("#tooltip")
-								 .select("span#text-2")
-								 .text(avgTaxiIn)
+								d3.select("#tooltip")
+								.select("span#text-1")
+								.text(avgTaxiOut)
 
-							 d3.select("#tooltip")
-								 .select("span#text-3")
-								 .text(longestTaxiOut)
+								d3.select("#tooltip")
+								.select("span#text-2")
+								.text(avgTaxiIn)
 
-							 d3.select("#tooltip")
-								 .select("span#text-4")
-								 .text(longestTaxiIn)
+								d3.select("#tooltip")
+								.select("span#text-3")
+								.text(longestTaxiOut)
 
-							 d3.select("#tooltip")
-								 .select("small#text-5")
-								 .text(takeoffsLandings)
+								d3.select("#tooltip")
+								.select("span#text-4")
+								.text(longestTaxiIn)
 
-							 //Show the tooltip
-							 d3.select("#tooltip").classed("hidden", false);
+								d3.select("#tooltip")
+								.select("small#text-5")
+								.text(takeoffsLandings)
+
+								//Show the tooltip
+								d3.select("#tooltip").classed("hidden", false);
+							})
+							.on("mouseout", (d) => {
+								d3.select("#tooltip").classed("hidden", true);
+							})
 						})
-						.on("mouseout", (d) => {
-							 d3.select("#tooltip").classed("hidden", true);
-						})
-					 })
-				 })
-			});
-		</script>
+					})
+					d3.selectAll("input").on("change", () => {
+						var avgTaxiOutRange = data.map((d) => {return parseFloat(d.avg_taxi_out)})
+						var avgTaxiInRange = data.map((d) => {return parseFloat(d.avg_taxi_in)})
+						var longTaxiOutRange = data.map((d) => {return parseFloat(d.longest_taxi_out)})
+						var longTaxiInRange = data.map((d) => {return parseFloat(d.longest_taxi_in)})
+
+						//Set domain
+						if (document.getElementById("avg-taxi-out-range").checked == true) {
+							color.domain([
+								d3.min(avgTaxiOutRange, function(d) { return d; }),
+								d3.max(avgTaxiOutRange, function(d) { return d; })
+							])
+							svg.selectAll("circle")
+							.style("fill", (d) => {
+								var value = d.avg_taxi_out;
+								return color(value)
+							});
+						} else if (document.getElementById("avg-taxi-in-range").checked == true) {
+							color.domain([
+								d3.min(avgTaxiInRange, function(d) { return d; }),
+								d3.max(avgTaxiInRange, function(d) { return d; })
+							])
+							svg.selectAll("circle")
+							.style("fill", (d) => {
+								var value = d.avg_taxi_in;
+								return color(value)
+							});
+						} else if (document.getElementById("long-taxi-out-range").checked == true) {
+							color.domain([
+								d3.min(longTaxiOutRange, function(d) { return d; }),
+								d3.max(longTaxiOutRange, function(d) { return d; })
+							])
+							svg.selectAll("circle")
+							.style("fill", (d) => {
+								var value = d.longest_taxi_out;
+								return color(value)
+							});
+						} else if (document.getElementById("long-taxi-in-range").checked == true) {
+							color.domain([
+								d3.min(longTaxiInRange, function(d) { return d; }),
+								d3.max(longTaxiInRange, function(d) { return d; })
+							])
+							svg.selectAll("circle")
+							.style("fill", (d) => {
+								var value = d.longest_taxi_in;
+								return color(value)
+							});
+						}
+						console.log(color.domain())
+					})
+				});
+			</script>
+		</div>
+	</div>
 	</body>
 </html>
