@@ -144,10 +144,11 @@ function updateData(fileDate) {
         ])
         rangefinder(color.domain())
         svg.selectAll("circle")
-        .style("fill", (d) => {
-          var value = d.avg_taxi_out;
-          return color(value)
-        });
+          .transition(750)
+          .style("fill", (d) => {
+            var value = d.avg_taxi_out;
+            return color(value)
+          });
       } else if (document.getElementById("avg-taxi-in-range").checked === true) {
         color.domain([
           d3.min(avgTaxiInRange, function(d) { return d; }),
@@ -155,6 +156,7 @@ function updateData(fileDate) {
         ])
         rangefinder(color.domain())
         svg.selectAll("circle")
+          .transition(750)
           .style("fill", (d) => {
             var value = d.avg_taxi_in;
             return color(value)
@@ -166,6 +168,7 @@ function updateData(fileDate) {
         ])
         rangefinder(color.domain())
         svg.selectAll("circle")
+          .transition(750)
           .style("fill", (d) => {
             var value = d.longest_taxi_out;
             return color(value)
@@ -177,11 +180,11 @@ function updateData(fileDate) {
         ])
         rangefinder(color.domain())
         svg.selectAll("circle")
+          .transition(750)
           .style("fill", (d) => {
             var value = d.longest_taxi_in;
             return color(value)
           });
-        console.log(color.domain())
       }
     })
     d3.selectAll("select#year").on("change", () => {
