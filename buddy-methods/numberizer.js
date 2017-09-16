@@ -23,7 +23,7 @@ function secPlur(float) {
 }
 
 function secondizer(float) {
-  if (parseInt(float) > 60 && parseInt((float - parseInt(float)) * 60) === 0) {
+  if (parseInt(float) > 60 && parseInt(float) % 60 !== 0 && parseInt((float - parseInt(float)) * 60) === 0) {
     return `${hourPlur(parseInt(float/60))}, ${minPlur(parseInt(float) % 60)}`
   } else if (parseInt(float) < 60 && parseInt((float - parseInt(float)) * 60) > 0) {
     return `${minPlur(parseInt(float))}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
@@ -31,9 +31,9 @@ function secondizer(float) {
     return `${hourPlur(parseInt(float/60))}, ${minPlur(parseInt(float) % 60)}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
   } else if (parseInt(float) < 60 && parseInt((float - parseInt(float)) * 60) === 0) {
     return `${minPlur(parseInt(float))}`
-  } else if (parseInt(float) === 60 && parseInt((float - parseInt(float)) * 60) === 0) {
+  } else if (parseInt(float) % 60 === 0 && parseInt((float - parseInt(float)) * 60) === 0) {
     return `${hourPlur((float/60))}`
-  } else if (parseInt(float) === 60 && parseInt((float - parseInt(float)) * 60) > 0) {
+  } else if (parseInt(float) % 60 === 0 && parseInt((float - parseInt(float)) * 60) > 0) {
     return `${hourPlur(parseInt(float/60))}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
   }
 }

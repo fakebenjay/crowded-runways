@@ -5,16 +5,27 @@
 		<title>Crowded Runways</title>
 		<script src="https://d3js.org/d3.v4.min.js"></script>
 		<script src="buddy-methods/numberizer.js"></script>
+		<script src="buddy-methods/small-numberizer.js"></script>
+		<script src="buddy-methods/rangefinder.js"></script>
 		<script src="buddy-methods/update-data.js"></script>
 		<script src="buddy-methods/us-map.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-	<div id="container" style="width:100%;">
-		<div class="formbox" id="left" style="float:left; width:12%;">
+	<div id="left" style="float:left; width:12%;">
+		<div class="formbox">
 			<h3>Crowded Runways</h3>
 			<br>
-			<form>
+			<div>
+				<label><strong>Color Scale</strong></label><br>
+				<input class="radio" type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
+				<input class="radio" type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
+				<input class="radio" type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
+				<input class="radio" type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
+			</div>
+			<br>
+			<div>
+				<label><strong>Date</strong></label><br>
 				<label>Year</label>
 				<select id="year">
 					<option id="year-2017">2017</option>
@@ -41,19 +52,26 @@
 					<option id="month-11">November</option>
 					<option id="month-12">December</option>
 				</select>
-				<input id="button" name="update-button" type="button" value="Enter" onclick="updateData(fileDate)"></input>
-			</form>
-			<br>
-			<form>
-				<div>
-					<label>Color Scale</label><br>
-					<input class="radio" type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
-					<input class="radio" type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
-					<input class="radio" type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
-					<input class="radio" type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
-				</div>
-			</form>
+			</div>
 		</div>
+			<a id="button" name="update-button" type="button" href="updateData(fileDate)">
+				<div class="yellow-formbox">
+					<h3>ENTER ➔</h3>
+				</div>
+			</a>
+		<br>
+
+		<div id="scale-sign">
+			<div class="scale-top" id="scale-1"></div>
+			<div class="scale-mid" id="scale-2"></div>
+			<div class="scale-mid" id="scale-3"></div>
+			<div class="scale-mid" id="scale-4"></div>
+			<div class="scale-mid" id="scale-5"></div>
+			<div class="scale-mid" id="scale-6"></div>
+			<div class="scale-bottom" id="scale-7"></div>
+		</div>
+
+	</div>
 		<div id="right" style="float:right; width:88%;">
 			<div class="hidden" id="tooltip">
 				<h1 id="airport-code"></h1>
@@ -64,7 +82,7 @@
 				<span id="text-3"></span><br>
 				<span id="text-4"></span><br></br>
 				<small id="text-5"></span>
-				</div>
+			</div>
 				<script type="text/javascript">
 
 				//Width and height
@@ -104,6 +122,11 @@
 
 				var fileDate = `${yearNumber}_${monthNumber}`
 
+				document.getElementById('button').addEventListener('click', (e) => {
+					e.preventDefault()
+					updateData(fileDate)
+				})
+
 				//Load in taxi data
 				d3.csv(`monthly_data/${fileDate}.csv`, (data) => {
 					var avgTaxiOutRange = data.map((d) => {return parseFloat(d.avg_taxi_out)})
@@ -113,6 +136,8 @@
 						d3.min(avgTaxiOutRange, function(d) { return d; }),
 						d3.max(avgTaxiOutRange, function(d) { return d; })
 					]);
+
+					rangefinder(color.domain())
 
 					d3.json("us-states.json", function(json) {
 
@@ -218,6 +243,7 @@
 								d3.min(avgTaxiOutRange, function(d) { return d; }),
 								d3.max(avgTaxiOutRange, function(d) { return d; })
 							])
+							rangefinder(color.domain())
 							svg.selectAll("circle")
 							.style("fill", (d) => {
 								var value = d.avg_taxi_out;
@@ -228,6 +254,7 @@
 								d3.min(avgTaxiInRange, function(d) { return d; }),
 								d3.max(avgTaxiInRange, function(d) { return d; })
 							])
+							rangefinder(color.domain())
 							svg.selectAll("circle")
 								.style("fill", (d) => {
 									var value = d.avg_taxi_in;
@@ -238,6 +265,7 @@
 								d3.min(longTaxiOutRange, function(d) { return d; }),
 								d3.max(longTaxiOutRange, function(d) { return d; })
 							])
+							rangefinder(color.domain())
 							svg.selectAll("circle")
 								.style("fill", (d) => {
 									var value = d.longest_taxi_out;
@@ -248,13 +276,13 @@
 								d3.min(longTaxiInRange, function(d) { return d; }),
 								d3.max(longTaxiInRange, function(d) { return d; })
 							])
+							rangefinder(color.domain())
 							svg.selectAll("circle")
 								.style("fill", (d) => {
 									var value = d.longest_taxi_in;
 									return color(value)
 								});
 						}
-						console.log(color.domain())
 					})
 					d3.selectAll("select#year").on("change", () => {
 						if (document.getElementById("year-2017").selected === true) {
@@ -290,6 +318,5 @@
 			});
 			</script>
 		</div>
-	</div>
 	</body>
 </html>
