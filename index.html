@@ -4,60 +4,10 @@
 		<meta charset="utf-8">
 		<title>Crowded Runways</title>
 		<script src="https://d3js.org/d3.v4.min.js"></script>
-		<style type="text/css">
-			@import url('https://fonts.googleapis.com/css?family=Overpass');
-
-			body {
-				font-family: 'Overpass', sans-serif;
-			}
-
-			h1, h3, h4 {
-				padding: 0px;
-    		margin: 0px;
-			}
-
-			.formbox {
-				position: absolute;
-				padding: 10px 0px 10px 10px;
-				background-color: #008165;
-				color: white;
-				border-radius: 15px;
-				border-style: solid;
-				border-color: white;
-				-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-				-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-				box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-			}
-
-      #tooltip {
-        position: absolute;
-        width: auto;
-        height: auto;
-        padding: 10px;
-        background-color: #008165;
-				color: white;
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        border-radius: 15px;
-				border-style: solid;
-    		border-color: white;
-        -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-        -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-        pointer-events: none;
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      #tooltip p {
-        margin: 0;
-        font-family: sans-serif;
-        font-size: 16px;
-        line-height: 20px;
-      }
-		</style>
+		<script src="buddy-methods/numberizer.js"></script>
+		<script src="buddy-methods/update-data.js"></script>
+		<script src="buddy-methods/us-map.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 	<div id="container" style="width:100%;">
@@ -75,9 +25,7 @@
 					<option id="year-2012">2012</option>
 					<option id="year-2011">2011</option>
 				</select>
-			</form>
 			<br>
-			<form>
 				<label>Month</label>
 				<select id="month">
 					<option id="month-01">January</option>
@@ -93,15 +41,16 @@
 					<option id="month-11">November</option>
 					<option id="month-12">December</option>
 				</select>
+				<input id="button" name="update-button" type="button" value="Enter" onclick="updateData(fileDate)"></input>
 			</form>
 			<br>
 			<form>
 				<div>
 					<label>Color Scale</label><br>
-					<input type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
-					<input type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
-					<input type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
-					<input type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
+					<input class="radio" type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
+					<input class="radio" type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
+					<input class="radio" type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
+					<input class="radio" type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
 				</div>
 			</form>
 		</div>
@@ -113,7 +62,7 @@
 				<span id="text-1"></span><br>
 				<span id="text-2"></span><br>
 				<span id="text-3"></span><br>
-				<span id="text-4"></span><br>
+				<span id="text-4"></span><br></br>
 				<small id="text-5"></span>
 				</div>
 				<script type="text/javascript">
@@ -155,7 +104,7 @@
 
 				var fileDate = `${yearNumber}_${monthNumber}`
 
-				//Load in raw taxi data
+				//Load in taxi data
 				d3.csv(`monthly_data/${fileDate}.csv`, (data) => {
 					var avgTaxiOutRange = data.map((d) => {return parseFloat(d.avg_taxi_out)})
 
@@ -165,19 +114,19 @@
 						d3.max(avgTaxiOutRange, function(d) { return d; })
 					]);
 
-					//Load in GeoJSON data
 					d3.json("us-states.json", function(json) {
 
-						//Bind data and create one path per GeoJSON feature
-						svg.selectAll("path")
+					//Bind data and create one path per GeoJSON feature
+					svg.selectAll("path")
 						.data(json.features)
 						.enter()
 						.append("path")
 						.attr("d", path)
 						.style("fill", "#3768B7");
 
-						data.sort((a, b) => {return a.total_takeoffs - b.total_takeoffs})
-						svg.selectAll("circle")
+					data.sort((a, b) => {return a.total_takeoffs - b.total_takeoffs})
+
+					svg.selectAll("circle")
 						.data(data)
 						.enter()
 						.append("circle")
@@ -196,46 +145,6 @@
 						.style("stroke-width", 0.25)
 						.style("opacity", 0.85)
 						.on("mouseover", (d) => {
-							function hourPlur(float) {
-								if (parseInt(float) > 1) {
-									return `${parseInt(float)} hours`
-								} else {
-									return `${parseInt(float)} hour`
-								}
-							}
-
-							function minPlur(float) {
-								if (parseInt(float) > 1) {
-									return `${parseInt(float)} minutes`
-								} else {
-									return `${parseInt(float)} minute`
-								}
-							}
-
-							function secPlur(float) {
-								if (parseInt(float) > 1) {
-									return `${parseInt(float)} seconds`
-								} else {
-									return `${parseInt(float)} second`
-								}
-							}
-
-							function secondizer(float) {
-								if (parseInt(float) > 60 && parseInt(float) % 60 !== 0 && parseInt((float - parseInt(float)) * 60) === 0) {
-									return `${hourPlur(parseInt(float/60))}, ${minPlur(parseInt(float) % 60)}`
-								} else if (parseInt(float) < 60 && parseInt((float - parseInt(float)) * 60) > 0) {
-									return `${minPlur(parseInt(float))}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
-								} else if (parseInt(float) > 60 && parseInt((float - parseInt(float)) * 60) > 0) {
-									return `${hourPlur(parseInt(float/60))}, ${minPlur(parseInt(float) % 60)}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
-								} else if (parseInt(float) < 60 && parseInt((float - parseInt(float)) * 60) === 0) {
-									return `${minPlur(parseInt(float))}`
-								} else if (parseInt(float) % 60 === 0 && parseInt((float - parseInt(float)) * 60) === 0) {
-									return `${hourPlur((float/60))}`
-								} else if (parseInt(float) % 60 === 0 && parseInt((float - parseInt(float)) * 60) > 0) {
-									return `${hourPlur(parseInt(float/60))}, ${secPlur(parseInt((float - parseInt(float)) * 60))}`
-								}
-							}
-
 							var airportCode = `${d.iata_faa}`
 							var airport = `${d.name}`
 							var cityState = `${d.city_state}`
@@ -263,42 +172,41 @@
 								.text(airportCode)
 							}
 
-							d3.select("#tooltip")
+						d3.select("#tooltip")
 							.select("h3#location")
 							.text(airport)
 
-							d3.select("#tooltip")
+						d3.select("#tooltip")
 							.select("h4#city-state")
 							.text(cityState)
 
-							d3.select("#tooltip")
+						d3.select("#tooltip")
 							.select("span#text-1")
 							.text(avgTaxiOut)
 
-							d3.select("#tooltip")
+						d3.select("#tooltip")
 							.select("span#text-2")
 							.text(avgTaxiIn)
 
-							d3.select("#tooltip")
+						d3.select("#tooltip")
 							.select("span#text-3")
 							.text(longestTaxiOut)
 
-							d3.select("#tooltip")
+						d3.select("#tooltip")
 							.select("span#text-4")
 							.text(longestTaxiIn)
 
-							d3.select("#tooltip")
+						d3.select("#tooltip")
 							.select("small#text-5")
 							.text(takeoffsLandings)
 
-							//Show the tooltip
-							d3.select("#tooltip").classed("hidden", false);
-						})
-						.on("mouseout", (d) => {
-							d3.select("#tooltip").classed("hidden", true);
-						})
+						//Show the tooltip
+						d3.select("#tooltip").classed("hidden", false);
 					})
-					d3.selectAll("input").on("change", () => {
+					.on("mouseout", (d) => {
+						d3.select("#tooltip").classed("hidden", true);
+					})
+					d3.selectAll("input.radio").on("change", () => {
 						var avgTaxiOutRange = data.map((d) => {return parseFloat(d.avg_taxi_out)})
 						var avgTaxiInRange = data.map((d) => {return parseFloat(d.avg_taxi_in)})
 						var longTaxiOutRange = data.map((d) => {return parseFloat(d.longest_taxi_out)})
@@ -321,30 +229,30 @@
 								d3.max(avgTaxiInRange, function(d) { return d; })
 							])
 							svg.selectAll("circle")
-							.style("fill", (d) => {
-								var value = d.avg_taxi_in;
-								return color(value)
-							});
+								.style("fill", (d) => {
+									var value = d.avg_taxi_in;
+									return color(value)
+								});
 						} else if (document.getElementById("long-taxi-out-range").checked === true) {
 							color.domain([
 								d3.min(longTaxiOutRange, function(d) { return d; }),
 								d3.max(longTaxiOutRange, function(d) { return d; })
 							])
 							svg.selectAll("circle")
-							.style("fill", (d) => {
-								var value = d.longest_taxi_out;
-								return color(value)
-							});
+								.style("fill", (d) => {
+									var value = d.longest_taxi_out;
+									return color(value)
+								});
 						} else if (document.getElementById("long-taxi-in-range").checked === true) {
 							color.domain([
 								d3.min(longTaxiInRange, function(d) { return d; }),
 								d3.max(longTaxiInRange, function(d) { return d; })
 							])
 							svg.selectAll("circle")
-							.style("fill", (d) => {
-								var value = d.longest_taxi_in;
-								return color(value)
-							});
+								.style("fill", (d) => {
+									var value = d.longest_taxi_in;
+									return color(value)
+								});
 						}
 						console.log(color.domain())
 					})
@@ -363,7 +271,23 @@
 							d3.select("option#month-12").classed("hidden", false);
 						}
 					})
-				});
+					d3.selectAll("select#year").on("change", () => {
+						if (document.getElementById("year-2017").selected === true) {
+							d3.select("option#month-08").classed("hidden", true);
+							d3.select("option#month-09").classed("hidden", true);
+							d3.select("option#month-10").classed("hidden", true);
+							d3.select("option#month-11").classed("hidden", true);
+							d3.select("option#month-12").classed("hidden", true);
+						} else if (document.getElementById("year-2017").selected === false) {
+							d3.select("option#month-08").classed("hidden", false);
+							d3.select("option#month-09").classed("hidden", false);
+							d3.select("option#month-10").classed("hidden", false);
+							d3.select("option#month-11").classed("hidden", false);
+							d3.select("option#month-12").classed("hidden", false);
+						}
+					})
+				})
+			});
 			</script>
 		</div>
 	</div>
