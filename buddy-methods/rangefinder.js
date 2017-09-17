@@ -11,7 +11,7 @@ function rangefinder(array) {
   rangeArray[5] = `${timer(array[0] + increment*5)}`
   rangeArray[6] = `${timer(array[0] + increment*6)}`
   rangeArray[7] = `${timer(array[1])}`
-
+  
   document.getElementById('scale-1').innerHTML = `${rangeArray[0]} to ${rangeArray[1]}`
   document.getElementById('scale-1').style.backgroundColor = color.range()[0]
 

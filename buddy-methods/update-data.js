@@ -15,21 +15,25 @@ function updateData(fileDate) {
 
     //Set domain
     if (document.getElementById("avg-taxi-out-range").checked === true) {
+      lgaSortAvgTaxiOut(data)
       color.domain([
         d3.min(avgTaxiOutRange, function(d) { return d; }),
         d3.max(avgTaxiOutRange, function(d) { return d; })
       ]);
     } else if (document.getElementById("avg-taxi-in-range").checked === true) {
+      lgaSortAvgTaxiIn(data)
       color.domain([
         d3.min(avgTaxiInRange, function(d) { return d; }),
         d3.max(avgTaxiInRange, function(d) { return d; })
       ]);
     } else if (document.getElementById("long-taxi-out-range").checked === true) {
+      lgaSortLongTaxiOut(data)
       color.domain([
         d3.min(longTaxiOutRange, function(d) { return d; }),
         d3.max(longTaxiOutRange, function(d) { return d; })
       ]);
     } else if (document.getElementById("long-taxi-in-range").checked === true) {
+      lgaSortLongTaxiIn(data)
       color.domain([
         d3.min(longTaxiInRange, function(d) { return d; }),
         d3.max(longTaxiInRange, function(d) { return d; })
@@ -55,12 +59,16 @@ function updateData(fileDate) {
       .attr("r", 5)
       .style("fill", (d) => {
         if (document.getElementById("avg-taxi-out-range").checked === true) {
+          lgaSortAvgTaxiOut(data)
           var value = d.avg_taxi_out;
         } else if (document.getElementById("avg-taxi-in-range").checked === true) {
+          lgaSortAvgTaxiIn(data)
           var value = d.avg_taxi_in;
         } else if (document.getElementById("long-taxi-out-range").checked === true) {
+          lgaSortLongTaxiOut(data)
           var value = d.longest_taxi_out;
         } else if (document.getElementById("long-taxi-in-range").checked === true) {
+          lgaSortLongTaxiIn(data)
           var value = d.longest_taxi_in;
         }
         return color(value)
@@ -143,8 +151,8 @@ function updateData(fileDate) {
           d3.max(avgTaxiOutRange, function(d) { return d; })
         ])
         rangefinder(color.domain())
+        lgaSortAvgTaxiOut(data)
         svg.selectAll("circle")
-          .transition(750)
           .style("fill", (d) => {
             var value = d.avg_taxi_out;
             return color(value)
@@ -155,8 +163,8 @@ function updateData(fileDate) {
           d3.max(avgTaxiInRange, function(d) { return d; })
         ])
         rangefinder(color.domain())
+        lgaSortAvgTaxiIn(data)
         svg.selectAll("circle")
-          .transition(750)
           .style("fill", (d) => {
             var value = d.avg_taxi_in;
             return color(value)
@@ -167,8 +175,8 @@ function updateData(fileDate) {
           d3.max(longTaxiOutRange, function(d) { return d; })
         ])
         rangefinder(color.domain())
+        lgaSortLongTaxiOut(data)
         svg.selectAll("circle")
-          .transition(750)
           .style("fill", (d) => {
             var value = d.longest_taxi_out;
             return color(value)
@@ -179,8 +187,8 @@ function updateData(fileDate) {
           d3.max(longTaxiInRange, function(d) { return d; })
         ])
         rangefinder(color.domain())
+        lgaSortLongTaxiIn(data)
         svg.selectAll("circle")
-          .transition(750)
           .style("fill", (d) => {
             var value = d.longest_taxi_in;
             return color(value)

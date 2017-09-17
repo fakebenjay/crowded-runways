@@ -84,7 +84,7 @@ h1, h3, h4 {
 
 .scale-top {
   position: relative;
-  padding: 5px 0px 5px 10px;
+  padding-left: 10px;
   color: black;
   min-width: 100%;
   max-width: 100%;
@@ -99,7 +99,7 @@ h1, h3, h4 {
 
 .scale-mid {
   position: relative;
-  padding: 5px 0px 5px 10px;
+  padding-left: 10px;
   color: black;
   min-width: 100%;
   max-width: 100%;
@@ -113,7 +113,7 @@ h1, h3, h4 {
 
 .scale-bottom {
   position: relative;
-  padding: 5px 0px 5px 10px;
+  padding-left: 10px;
   color: black;
   min-width: 100%;
   max-width: 100%;
@@ -124,4 +124,26 @@ h1, h3, h4 {
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+#lga-sign {
+  position: relative;
+  padding: 5px 0px 5px 10px;
+  color: white;
+  min-width: 100%;
+  max-width: 100%;
+  background-color: #155197;
+  border-radius: 15px 15px 15px 15px;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px 3px 3px 3px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+br.sidebar {
+  display:block;
+  content:'';
+  margin-top:15px;
 }
