@@ -147,3 +147,9 @@ br.sidebar {
   content:'';
   margin-top:15px;
 }
+
+br.small-break {
+  display:block;
+  content:'';
+  margin-top:6px;
+}
