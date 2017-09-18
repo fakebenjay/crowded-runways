@@ -44,8 +44,6 @@ function updateData(fileDate) {
 
     data.sort((a, b) => {return a.total_takeoffs - b.total_takeoffs})
 
-    debugger
-
     svg.selectAll("circle").remove();
 
     svg.selectAll("circle")
