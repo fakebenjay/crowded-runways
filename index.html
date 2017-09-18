@@ -36,6 +36,29 @@
 					<option id="year-2013">2013</option>
 					<option id="year-2012">2012</option>
 					<option id="year-2011">2011</option>
+					<option id="year-2010">2010</option>
+					<option id="year-2009">2009</option>
+					<option id="year-2008">2008</option>
+					<option id="year-2007">2007</option>
+					<option id="year-2006">2006</option>
+					<option id="year-2005">2005</option>
+					<option id="year-2004">2004</option>
+					<option id="year-2003">2003</option>
+					<option id="year-2002">2002</option>
+					<option id="year-2001">2001</option>
+					<option id="year-2000">2000</option>
+					<option id="year-1999">1999</option>
+					<option id="year-1998">1998</option>
+					<option id="year-1997">1997</option>
+					<option id="year-1996">1996</option>
+					<option id="year-1995">1995</option>
+					<option id="year-1994">1994</option>
+					<option id="year-1993">1993</option>
+					<option id="year-1992">1992</option>
+					<option id="year-1991">1991</option>
+					<option id="year-1990">1990</option>
+					<option id="year-1989">1989</option>
+					<option id="year-1988">1988</option>
 				</select>
 			<br>
 				<label>Month</label>
@@ -119,6 +142,26 @@
 					d3.select("option#month-10").classed("hidden", true);
 					d3.select("option#month-11").classed("hidden", true);
 					d3.select("option#month-12").classed("hidden", true);
+				}
+
+				if (document.getElementById("month-08").selected === true) {
+					d3.select("option#year-2017").classed("hidden", true);
+				}
+
+				if (document.getElementById("month-09").selected === true) {
+					d3.select("option#year-2017").classed("hidden", true);
+				}
+
+				if (document.getElementById("month-10").selected === true) {
+					d3.select("option#year-2017").classed("hidden", true);
+				}
+
+				if (document.getElementById("month-11").selected === true) {
+					d3.select("option#year-2017").classed("hidden", true);
+				}
+
+				if (document.getElementById("month-12").selected === true) {
+					d3.select("option#year-2017").classed("hidden", true);
 				}
 
 				var yearNumber = document.getElementById('year').value

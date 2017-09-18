@@ -148,8 +148,8 @@ br.sidebar {
   margin-top:15px;
 }
 
-br.small-break {
+br.sidebar {
   display:block;
   content:'';
-  margin-top:6px;
+  margin-top:15px;
 }

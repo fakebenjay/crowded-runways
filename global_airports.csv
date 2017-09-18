@@ -6,7 +6,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 4019,Albuquerque International Sunport,Albuquerque,United States,ABQ,KABQ,35.0402222,-106.6091944,5355,-7,A
 5714,Aberdeen Regional Airport,Aberdeen,United States,ABR,KABR,45.4491,-98.4218,1302,-6,A
 5715,Southwest Georgia Regional Airport,Albany,United States,ABY,KABY,31.5355,-84.1945,197,-5,A
-3517,NantucketMemorial,Nantucket,United States,ACK,KACK,41.253053,-70.060181,48,-5,A
+3517,Nantucket Memorial,Nantucket,United States,ACK,KACK,41.253053,-70.060181,48,-5,A
 3700,Waco Regional,Waco,United States,ACT,KACT,31.611289,-97.230519,516,-6,A
 4384,Arcata,Arcata CA,United States,ACV,KACV,40.978111,-124.108611,221,-8,A
 3524,Atlantic City International,Atlantic City,United States,ACY,KACY,39.457583,-74.577167,75,-5,A
