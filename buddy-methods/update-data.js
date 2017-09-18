@@ -44,6 +44,8 @@ function updateData(fileDate) {
 
     data.sort((a, b) => {return a.total_takeoffs - b.total_takeoffs})
 
+    debugger
+
     svg.selectAll("circle").remove();
 
     svg.selectAll("circle")
@@ -87,22 +89,30 @@ function updateData(fileDate) {
         var takeoffsLandings = `Total Takeoffs: ${d.total_takeoffs}, Total Landings: ${d.total_landings}`
 
         var coordinates = [d3.event.clientX, d3.event.clientY]
-        var divOffset = 220
+        var divVertOffset = 260
+        var divHorizOffset = 260
         var windowHeight = document.getElementById('right').clientHeight
+        var windowWidth = document.getElementById('right').clientWidth
 
-        if (coordinates[1] + divOffset > windowHeight) {
+        if (coordinates[1] + divVertOffset > windowHeight) {
           d3.select("#tooltip")
-          .style("left", coordinates[0] + "px")
-          .style("top", (coordinates[1] - divOffset) + "px")
-          .select("h1#airport-code")
-          .text(airportCode)
+          .style("top", (coordinates[1] - divVertOffset) + "px")
+        } else {
+          d3.select("#tooltip")
+          .style("top", coordinates[1] + "px")
+        }
+
+        if (coordinates[0] + divHorizOffset > windowWidth) {
+          d3.select("#tooltip")
+          .style("left", (coordinates[0] - divHorizOffset) + "px")
         } else {
           d3.select("#tooltip")
           .style("left", coordinates[0] + "px")
-          .style("top", coordinates[1] + "px")
-          .select("h1#airport-code")
-          .text(airportCode)
         }
+
+      d3.select("#tooltip")
+        .select("h1#airport-code")
+        .text(airportCode)
 
       d3.select("#tooltip")
         .select("h3#location")
