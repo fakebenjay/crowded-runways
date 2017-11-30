@@ -202,7 +202,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3830,Chicago O'Hare International,Chicago,United States,ORD,KORD,41.978603,-87.904842,668,-6,A,"Chicago, IL",26575,26655,27054,27051,10.340997177798762,16.20266366535359,125.0,150.0,"Sat, Mar 13, 2010","Mon, Mar 22, 2010"
 3611,Norfolk International,Norfolk,United States,ORF,KORF,36.894611,-76.201222,26,-5,A,"Norfolk, VA",1295,1289,1319,1319,4.442471042471045,13.240496508921659,21.0,110.0,"Wed, Mar 31, 2010","Wed, Mar  3, 2010"
 5757,Southwest Oregon Regional Airport,North Bend,United States,OTH,KOTH,43.4171,-124.246,17,-8,A,"North Bend/Coos Bay, OR",93,91,93,93,2.860215053763441,8.450549450549449,5.0,51.0,"Wed, Mar 17, 2010","Thu, Mar 25, 2010"
-3693,Ralph WienMemorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",92,92,92,92,4.608695652173912,4.880434782608695,7.0,13.0,"Tue, Mar  2, 2010","Sun, Mar 28, 2010"
+3693,Ralph Wien Memorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",92,92,92,92,4.608695652173912,4.880434782608695,7.0,13.0,"Tue, Mar  2, 2010","Sun, Mar 28, 2010"
 6961,Oxnard - Ventura County,Oxnard,United States,OXR,KOXR,34.200833,-119.207222,15,-8,A,"Oxnard/Ventura, CA",89,89,89,89,3.0,8.662921348314605,9.0,22.0,"Thu, Mar 25, 2010","Sat, Mar  6, 2010"
 4117,Barkley Regional Airport,PADUCAH,United States,PAH,KPAH,37.0602875,-88.7729583,410,-6,A,"Paducah, KY",61,59,62,62,4.9672131147541,12.525423728813557,21.0,97.0,"Sat, Mar 20, 2010","Thu, Mar 25, 2010"
 3722,Palm Beach International,West Palm Beach,United States,PBI,KPBI,26.683161,-80.095589,19,-5,A,"West Palm Beach/Palm Beach, FL",2821,2822,2872,2874,4.793335696561512,13.750885896527283,58.0,86.0,"Sun, Mar 28, 2010","Mon, Mar 29, 2010"

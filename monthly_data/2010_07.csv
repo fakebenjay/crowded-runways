@@ -211,7 +211,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3830,Chicago O'Hare International,Chicago,United States,ORD,KORD,41.978603,-87.904842,668,-6,A,"Chicago, IL",26968,27026,27581,27580,9.4901364580243,18.13409309553762,178.0,176.0,"Fri, Jul 23, 2010","Fri, Jul 23, 2010"
 3611,Norfolk International,Norfolk,United States,ORF,KORF,36.894611,-76.201222,26,-5,A,"Norfolk, VA",1337,1337,1357,1357,5.0037397157815935,12.105459985041147,139.0,125.0,"Thu, Jul 29, 2010","Thu, Jul 29, 2010"
 5757,Southwest Oregon Regional Airport,North Bend,United States,OTH,KOTH,43.4171,-124.246,17,-8,A,"North Bend/Coos Bay, OR",152,152,152,152,2.7828947368421053,9.802631578947365,9.0,49.0,"Sun, Jul 11, 2010","Thu, Jul  1, 2010"
-3693,Ralph WienMemorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",84,84,91,91,3.75,5.654761904761906,6.0,16.0,"Tue, Jul  6, 2010","Thu, Jul  1, 2010"
+3693,Ralph Wien Memorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",84,84,91,91,3.75,5.654761904761906,6.0,16.0,"Tue, Jul  6, 2010","Thu, Jul  1, 2010"
 4117,Barkley Regional Airport,PADUCAH,United States,PAH,KPAH,37.0602875,-88.7729583,410,-6,A,"Paducah, KY",60,60,62,62,4.433333333333335,8.1,6.0,20.0,"Sun, Jul 18, 2010","Mon, Jul  5, 2010"
 3722,Palm Beach International,West Palm Beach,United States,PBI,KPBI,26.683161,-80.095589,19,-5,A,"West Palm Beach/Palm Beach, FL",1840,1839,1860,1860,4.821195652173918,12.701468189233283,25.0,80.0,"Tue, Jul 13, 2010","Sun, Jul 25, 2010"
 3720,Portland International,Portland,United States,PDX,KPDX,45.588722,-122.5975,30,-8,A,"Portland, OR",4937,4942,4959,4960,3.8420093173992242,11.50728450020233,35.0,51.0,"Thu, Jul 22, 2010","Thu, Jul  8, 2010"

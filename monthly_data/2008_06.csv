@@ -205,7 +205,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3734,Ontario International,Ontario,United States,ONT,KONT,34.056,-117.601194,944,-8,A,"Ontario, CA",3107,3100,3125,3118,4.529771483746375,10.4445161290323,24.0,66.0,"Wed, Jun 25, 2008","Sat, Jun  7, 2008"
 3830,Chicago O'Hare International,Chicago,United States,ORD,KORD,41.978603,-87.904842,668,-6,A,"Chicago, IL",28930,29156,30542,30519,8.276080193570701,22.782789134312036,117.0,231.0,"Sun, Jun  8, 2008","Fri, Jun  6, 2008"
 3611,Norfolk International,Norfolk,United States,ORF,KORF,36.894611,-76.201222,26,-5,A,"Norfolk, VA",1416,1411,1446,1443,4.445621468926558,12.950389794472,41.0,135.0,"Thu, Jun 19, 2008","Tue, Jun 10, 2008"
-3693,Ralph WienMemorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",80,83,90,90,3.3125,6.265060240963855,6.0,42.0,"Sun, Jun 15, 2008","Sat, Jun 14, 2008"
+3693,Ralph Wien Memorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",80,83,90,90,3.3125,6.265060240963855,6.0,42.0,"Sun, Jun 15, 2008","Sat, Jun 14, 2008"
 6961,Oxnard - Ventura County,Oxnard,United States,OXR,KOXR,34.200833,-119.207222,15,-8,A,"Oxnard/Ventura, CA",108,108,110,110,3.537037037037037,10.574074074074074,19.0,26.0,"Tue, Jun 17, 2008","Sun, Jun  1, 2008"
 3722,Palm Beach International,West Palm Beach,United States,PBI,KPBI,26.683161,-80.095589,19,-5,A,"West Palm Beach/Palm Beach, FL",1970,1977,1993,1993,4.725380710659893,13.251390996459286,29.0,130.0,"Tue, Jun 17, 2008","Wed, Jun 18, 2008"
 3720,Portland International,Portland,United States,PDX,KPDX,45.588722,-122.5975,30,-8,A,"Portland, OR",5134,5139,5165,5167,3.8515777171795884,11.940066160731632,53.0,77.0,"Sun, Jun 29, 2008","Mon, Jun 23, 2008"

@@ -203,7 +203,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3734,Ontario International,Ontario,United States,ONT,KONT,34.056,-117.601194,944,-8,A,"Ontario, CA",2913,2914,2947,2947,4.236869207003091,10.526080988332202,20.0,112.0,"Thu, Mar 22, 2007","Wed, Mar 14, 2007"
 3830,Chicago O'Hare International,Chicago,United States,ORD,KORD,41.978603,-87.904842,668,-6,A,"Chicago, IL",30379,30571,32447,32456,8.273346719773548,19.53975990317623,82.0,161.0,"Wed, Mar 14, 2007","Thu, Mar 22, 2007"
 3611,Norfolk International,Norfolk,United States,ORF,KORF,36.894611,-76.201222,26,-5,A,"Norfolk, VA",1615,1615,1659,1662,4.18885448916409,13.307120743034051,25.0,113.0,"Sun, Mar 25, 2007","Wed, Mar 21, 2007"
-3693,Ralph WienMemorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",88,88,93,93,3.647727272727273,5.227272727272728,7.0,11.0,"Tue, Mar  6, 2007","Fri, Mar  9, 2007"
+3693,Ralph Wien Memorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",88,88,93,93,3.647727272727273,5.227272727272728,7.0,11.0,"Tue, Mar  6, 2007","Fri, Mar  9, 2007"
 6961,Oxnard - Ventura County,Oxnard,United States,OXR,KOXR,34.200833,-119.207222,15,-8,A,"Oxnard/Ventura, CA",116,116,119,119,3.8103448275862073,11.060344827586206,6.0,38.0,"Sat, Mar  3, 2007","Thu, Mar 15, 2007"
 3722,Palm Beach International,West Palm Beach,United States,PBI,KPBI,26.683161,-80.095589,19,-5,A,"West Palm Beach/Palm Beach, FL",3106,3109,3186,3186,4.778815196394073,14.775812158250266,37.0,90.0,"Mon, Mar 26, 2007","Fri, Mar 23, 2007"
 3720,Portland International,Portland,United States,PDX,KPDX,45.588722,-122.5975,30,-8,A,"Portland, OR",4710,4707,4751,4749,3.73036093418259,10.772678988740166,25.0,75.0,"Sat, Mar  3, 2007","Thu, Mar 22, 2007"

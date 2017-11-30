@@ -211,7 +211,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3611,Norfolk International,Norfolk,United States,ORF,KORF,36.894611,-76.201222,26,-5,A,"Norfolk, VA",711,705,742,740,4.867791842475394,13.24822695035461,40.0,107.0,"Sun, Jan  8, 2017","Mon, Jan  9, 2017"
 6426,Worcester Regional Airport,Worcester,United States,ORH,KORH,42.2673,-71.8757,1009,-5,U,"Worcester, MA",58,58,62,62,3.793103448275862,13.258620689655173,6.0,35.0,"Mon, Jan  9, 2017","Tue, Jan 31, 2017"
 5757,Southwest Oregon Regional Airport,North Bend,United States,OTH,KOTH,43.4171,-124.246,17,-8,A,"North Bend/Coos Bay, OR",17,17,18,18,3.8823529411764706,17.941176470588236,6.0,49.0,"Mon, Jan  2, 2017","Thu, Jan  5, 2017"
-3693,Ralph WienMemorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",56,56,61,61,4.446428571428572,7.767857142857143,8.0,26.0,"Fri, Jan 27, 2017","Tue, Jan 24, 2017"
+3693,Ralph Wien Memorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",56,56,61,61,4.446428571428572,7.767857142857143,8.0,26.0,"Fri, Jan 27, 2017","Tue, Jan 24, 2017"
 4117,Barkley Regional Airport,PADUCAH,United States,PAH,KPAH,37.0602875,-88.7729583,410,-6,A,"Paducah, KY",50,50,59,58,4.18,12.96,6.0,44.0,"Mon, Jan 30, 2017","Thu, Jan  5, 2017"
 3771,Plattsburgh International,Plattsburgh,United States,PBG,KPBG,44.650944,-73.468139,234,-5,A,"Plattsburgh, NY",59,58,62,62,6.135593220338983,17.344827586206893,12.0,46.0,"Fri, Jan 27, 2017","Wed, Jan 11, 2017"
 3722,Palm Beach International,West Palm Beach,United States,PBI,KPBI,26.683161,-80.095589,19,-5,A,"West Palm Beach/Palm Beach, FL",2407,2407,2441,2442,4.982550893228077,15.437474034067304,51.0,80.0,"Sat, Jan  7, 2017","Mon, Jan 16, 2017"

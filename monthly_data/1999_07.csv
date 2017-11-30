@@ -140,7 +140,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3734,Ontario International,Ontario,United States,ONT,KONT,34.056,-117.601194,944,-8,A,"Ontario, CA",2936,2937,2975,2975,3.8545640326975525,9.383724889342872,23.0,63.0,"Sat, Jul 10, 1999","Sat, Jul 17, 1999"
 3830,Chicago O'Hare International,Chicago,United States,ORD,KORD,41.978603,-87.904842,668,-6,A,"Chicago, IL",23992,24215,25683,25676,7.799391463821275,23.623208754903953,79.0,324.0,"Sun, Jul 11, 1999","Sat, Jul 17, 1999"
 3611,Norfolk International,Norfolk,United States,ORF,KORF,36.894611,-76.201222,26,-5,A,"Norfolk, VA",1299,1309,1376,1373,3.9222478829869103,11.600458365164243,25.0,122.0,"Fri, Jul  2, 1999","Thu, Jul  1, 1999"
-3693,Ralph WienMemorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",74,74,75,75,2.7432432432432434,8.0,7.0,19.0,"Sat, Jul 10, 1999","Fri, Jul 23, 1999"
+3693,Ralph Wien Memorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",74,74,75,75,2.7432432432432434,8.0,7.0,19.0,"Sat, Jul 10, 1999","Fri, Jul 23, 1999"
 3722,Palm Beach International,West Palm Beach,United States,PBI,KPBI,26.683161,-80.095589,19,-5,A,"West Palm Beach/Palm Beach, FL",1570,1574,1618,1618,4.554140127388538,12.148030495552728,31.0,133.0,"Fri, Jul 23, 1999","Wed, Jul 28, 1999"
 3720,Portland International,Portland,United States,PDX,KPDX,45.588722,-122.5975,30,-8,A,"Portland, OR",4939,4942,4992,4990,3.5041506377809215,12.0305544314043,31.0,106.0,"Fri, Jul 16, 1999","Sat, Jul 17, 1999"
 3752,Philadelphia International,Philadelphia,United States,PHL,KPHL,39.871944,-75.241139,36,-5,A,"Philadelphia, PA",9136,9158,9865,9863,7.001532399299474,24.454793623061793,78.0,280.0,"Mon, Jul 19, 1999","Thu, Jul  1, 1999"

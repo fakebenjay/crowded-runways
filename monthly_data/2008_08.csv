@@ -208,7 +208,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3830,Chicago O'Hare International,Chicago,United States,ORD,KORD,41.978603,-87.904842,668,-6,A,"Chicago, IL",29805,29964,30773,30732,8.508035564502622,17.74439327192629,308.0,192.0,"Fri, Aug  8, 2008","Fri, Aug 15, 2008"
 3611,Norfolk International,Norfolk,United States,ORF,KORF,36.894611,-76.201222,26,-5,A,"Norfolk, VA",1509,1503,1537,1537,4.43141153081511,12.413173652694615,45.0,129.0,"Thu, Aug  7, 2008","Wed, Aug 13, 2008"
 5757,Southwest Oregon Regional Airport,North Bend,United States,OTH,KOTH,43.4171,-124.246,17,-8,A,"North Bend/Coos Bay, OR",60,62,62,62,4.3,14.564516129032258,11.0,41.0,"Tue, Aug  5, 2008","Fri, Aug 15, 2008"
-3693,Ralph WienMemorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",91,91,92,92,3.659340659340659,6.08791208791209,6.0,26.0,"Tue, Aug  5, 2008","Wed, Aug 20, 2008"
+3693,Ralph Wien Memorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",91,91,92,92,3.659340659340659,6.08791208791209,6.0,26.0,"Tue, Aug  5, 2008","Wed, Aug 20, 2008"
 6961,Oxnard - Ventura County,Oxnard,United States,OXR,KOXR,34.200833,-119.207222,15,-8,A,"Oxnard/Ventura, CA",100,100,101,101,3.48,11.260000000000005,6.0,40.0,"Sun, Aug 10, 2008","Tue, Aug  5, 2008"
 3722,Palm Beach International,West Palm Beach,United States,PBI,KPBI,26.683161,-80.095589,19,-5,A,"West Palm Beach/Palm Beach, FL",1980,1981,2011,2011,4.663636363636361,12.510853104492684,40.0,130.0,"Tue, Aug 26, 2008","Fri, Aug 15, 2008"
 3720,Portland International,Portland,United States,PDX,KPDX,45.588722,-122.5975,30,-8,A,"Portland, OR",5265,5268,5289,5287,3.9468186134852807,12.207289293849678,34.0,72.0,"Tue, Aug  5, 2008","Thu, Aug 21, 2008"

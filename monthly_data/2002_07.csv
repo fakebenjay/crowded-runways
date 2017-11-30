@@ -146,7 +146,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3830,Chicago O'Hare International,Chicago,United States,ORD,KORD,41.978603,-87.904842,668,-6,A,"Chicago, IL",28933,29004,29622,29625,8.080392631251588,20.32140394428346,81.0,347.0,"Thu, Jul 11, 2002","Tue, Jul 23, 2002"
 3611,Norfolk International,Norfolk,United States,ORF,KORF,36.894611,-76.201222,26,-5,A,"Norfolk, VA",1651,1653,1668,1668,4.1041792852816545,11.479733817301891,60.0,141.0,"Tue, Jul 23, 2002","Wed, Jul  3, 2002"
 6426,Worcester Regional Airport,Worcester,United States,ORH,KORH,42.2673,-71.8757,1009,-5,U,"Worcester, MA",30,29,31,31,3.433333333333333,9.0,10.0,33.0,"Wed, Jul 31, 2002","Mon, Jul 22, 2002"
-3693,Ralph WienMemorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",93,92,93,93,2.903225806451612,6.478260869565219,6.0,15.0,"Tue, Jul  2, 2002","Mon, Jul  1, 2002"
+3693,Ralph Wien Memorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",93,92,93,93,2.903225806451612,6.478260869565219,6.0,15.0,"Tue, Jul  2, 2002","Mon, Jul  1, 2002"
 3722,Palm Beach International,West Palm Beach,United States,PBI,KPBI,26.683161,-80.095589,19,-5,A,"West Palm Beach/Palm Beach, FL",1610,1611,1624,1625,4.698136645962734,12.698324022346378,20.0,117.0,"Tue, Jul  2, 2002","Tue, Jul 23, 2002"
 3720,Portland International,Portland,United States,PDX,KPDX,45.588722,-122.5975,30,-8,A,"Portland, OR",4533,4534,4556,4557,3.886388705051829,11.48389942655492,51.0,67.0,"Thu, Jul 11, 2002","Fri, Jul 26, 2002"
 3752,Philadelphia International,Philadelphia,United States,PHL,KPHL,39.871944,-75.241139,36,-5,A,"Philadelphia, PA",9162,9154,9432,9403,7.554573237284429,23.120166047629425,139.0,241.0,"Fri, Jul 19, 2002","Fri, Jul 19, 2002"

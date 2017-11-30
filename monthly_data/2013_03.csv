@@ -220,7 +220,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3830,Chicago O'Hare International,Chicago,United States,ORD,KORD,41.978603,-87.904842,668,-6,A,"Chicago, IL",24661,24694,25505,25471,9.202911479664246,17.12549607192039,98.0,138.0,"Fri, Mar  1, 2013","Fri, Mar  1, 2013"
 3611,Norfolk International,Norfolk,United States,ORF,KORF,36.894611,-76.201222,26,-5,A,"Norfolk, VA",1427,1426,1472,1473,4.20182200420463,13.195652173913041,28.0,76.0,"Sun, Mar 24, 2013","Mon, Mar 18, 2013"
 5757,Southwest Oregon Regional Airport,North Bend,United States,OTH,KOTH,43.4171,-124.246,17,-8,A,"North Bend/Coos Bay, OR",31,31,31,31,3.0,10.258064516129032,4.0,25.0,"Wed, Mar 27, 2013","Sat, Mar 30, 2013"
-3693,Ralph WienMemorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",91,92,93,93,4.032967032967032,5.956521739130436,8.0,17.0,"Sun, Mar  3, 2013","Sat, Mar 30, 2013"
+3693,Ralph Wien Memorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A,"Kotzebue, AK",91,92,93,93,4.032967032967032,5.956521739130436,8.0,17.0,"Sun, Mar  3, 2013","Sat, Mar 30, 2013"
 4117,Barkley Regional Airport,PADUCAH,United States,PAH,KPAH,37.0602875,-88.7729583,410,-6,A,"Paducah, KY",60,60,62,62,4.583333333333333,13.116666666666667,14.0,30.0,"Sun, Mar 10, 2013","Tue, Mar 12, 2013"
 3722,Palm Beach International,West Palm Beach,United States,PBI,KPBI,26.683161,-80.095589,19,-5,A,"West Palm Beach/Palm Beach, FL",2620,2614,2638,2635,4.503435114503812,14.04055087987759,22.0,112.0,"Sat, Mar 23, 2013","Sun, Mar 24, 2013"
 3720,Portland International,Portland,United States,PDX,KPDX,45.588722,-122.5975,30,-8,A,"Portland, OR",4272,4274,4287,4287,3.7600655430711627,11.178287318671039,24.0,53.0,"Wed, Mar  6, 2013","Sat, Mar 23, 2013"

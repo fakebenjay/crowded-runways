@@ -813,7 +813,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 7511,Ohio State University Airport,Columbus,United States,OSU,KOSU,40.0798,-83.073,905,-5,U
 5757,Southwest Oregon Regional Airport,North Bend,United States,OTH,KOTH,43.4171,-124.246,17,-8,A
 7084,Anacortes Airport,Anacortes,United States,OTS,,48.498889,-122.6625,241,-8,A
-3693,Ralph WienMemorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A
+3693,Ralph Wien Memorial,Kotzebue,United States,OTZ,PAOT,66.884678,-162.59855,11,-9,A
 5758,Owensboro Daviess County Airport,Owensboro,United States,OWB,KOWB,37.7401,-87.1668,406,-6,A
 8280,Norwood Memorial Airport,Norwood,United States,OWD,KOWD,42.1905278,-71.1729444,49,-4,A
 8289,Waterbury-Oxford Airport,Oxford,United States,OXC,KOXC,41.4785556,-73.13525,726,-4,A
@@ -879,7 +879,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst
 3522,Palacios Municipal,Palacios,United States,PSX,KPSX,28.727508,-96.250958,14,-6,A
 6766,Port Heiden Airport,Port Heiden,United States,PTH,PAPH,56.9591,-158.633,95,-9,A
 3430,Platinum,Port Moller,United States,PTU,PAPM,59.011356,-161.819664,15,-9,A
-3527,PuebloMemorial,Pueblo Memorial,United States,PUB,KPUB,38.289085,-104.496572,4726,-7,A
+3527,Pueblo Memorial,Pueblo Memorial,United States,PUB,KPUB,38.289085,-104.496572,4726,-7,A
 7583,Carbon County Regional-Buck Davis Field,Price,United States,PUC,KPUC,39.609722,-110.75278,5957,-6,A
 3944,Pullman-Moscow Regional,Pullman,United States,PUW,KPUW,46.743861,-117.109583,2556,-8,A
 6456,Provincetown Municipal,Provincetown,United States,PVC,KPVC,42.071945,-70.22139,9,-5,A
