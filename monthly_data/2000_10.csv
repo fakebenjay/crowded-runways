@@ -21,7 +21,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3690,Nashville International,Nashville,United States,BNA,KBNA,36.124472,-86.678194,599,-6,A,"Nashville, TN",4955,4945,4985,4982,4.934813319878903,11.01820020222448,40.0,149.0,"Sun, Oct  8, 2000","Sun, Oct 15, 2000"
 3495,Boise Air Terminal,Boise,United States,BOI,KBOI,43.564361,-116.222861,2871,-7,A,"Boise, ID",1080,1076,1084,1083,4.124999999999998,9.624535315985122,21.0,51.0,"Thu, Oct 12, 2000","Sat, Oct 21, 2000"
 3448,General Edward Lawrence Logan International,Boston,United States,BOS,KBOS,42.364347,-71.005181,19,-5,A,"Boston, MA",9541,9533,9913,9918,8.347762289068207,20.57578936326443,66.0,104.0,"Sun, Oct 15, 2000","Fri, Oct 27, 2000"
-3571,Wiley Post Will RogersMemorial,Barrow,United States,BRW,PABR,71.285446,-156.766003,44,-9,A,"Barrow, AK",80,81,87,87,3.4375,7.654320987654319,7.0,25.0,"Sun, Oct 22, 2000","Wed, Oct  4, 2000"
+3571,Wiley Post Will Rogers Memorial,Barrow,United States,BRW,PABR,71.285446,-156.766003,44,-9,A,"Barrow, AK",80,81,87,87,3.4375,7.654320987654319,7.0,25.0,"Sun, Oct 22, 2000","Wed, Oct  4, 2000"
 3846,Baton Rouge Metro-Ryan Field,Baton Rouge,United States,BTR,KBTR,30.533167,-91.149639,70,-6,A,"Baton Rouge, LA",361,353,364,362,5.121883656509691,11.444759206798864,16.0,164.0,"Sun, Oct  1, 2000","Tue, Oct 31, 2000"
 3711,Burlington International,Burlington,United States,BTV,KBTV,44.471861,-73.153278,335,-5,A,"Burlington, VT",217,215,217,217,4.285714285714284,11.832558139534884,17.0,68.0,"Sun, Oct 15, 2000","Thu, Oct 26, 2000"
 3820,Buffalo Niagara International,Buffalo,United States,BUF,KBUF,42.940525,-78.732167,724,-5,A,"Buffalo, NY",1819,1828,1857,1863,3.7091808686091268,12.206236323851211,29.0,120.0,"Sat, Oct 28, 2000","Wed, Oct  4, 2000"

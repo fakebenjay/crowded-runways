@@ -36,7 +36,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3612,Southeast Texas Regional,Beaumont,United States,BPT,KBPT,29.950833,-94.020694,15,-6,A,"Beaumont/Port Arthur, TX",1,1,3,3,4.0,20.0,4.0,20.0,"Mon, Oct 17, 2005","Mon, Oct 17, 2005"
 5725,Brunswick Golden Isles Airport,Brunswick,United States,BQK,KBQK,31.2588,-81.4665,26,-5,A,"Brunswick, GA",94,84,98,93,3.4893617021276597,6.988095238095239,7.0,38.0,"Mon, Oct  3, 2005","Sat, Oct  1, 2005"
 3738,Brownsville South Padre Island International,Brownsville,United States,BRO,KBRO,25.906833,-97.425861,22,-6,A,"Brownsville, TX",176,177,177,177,4.982954545454541,17.502824858757066,11.0,55.0,"Sat, Oct 15, 2005","Thu, Oct 13, 2005"
-3571,Wiley Post Will RogersMemorial,Barrow,United States,BRW,PABR,71.285446,-156.766003,44,-9,A,"Barrow, AK",52,53,53,53,3.730769230769231,5.754716981132075,7.0,18.0,"Tue, Oct 18, 2005","Tue, Oct 18, 2005"
+3571,Wiley Post Will Rogers Memorial,Barrow,United States,BRW,PABR,71.285446,-156.766003,44,-9,A,"Barrow, AK",52,53,53,53,3.730769230769231,5.754716981132075,7.0,18.0,"Tue, Oct 18, 2005","Tue, Oct 18, 2005"
 4022,Bert Mooney Airport,Butte,United States,BTM,KBTM,45.954806,-112.497472,5550,-7,A,"Butte, MT",113,113,116,119,4.212389380530976,10.49557522123894,8.0,35.0,"Sat, Oct  1, 2005","Sun, Oct  2, 2005"
 3846,Baton Rouge Metro-Ryan Field,Baton Rouge,United States,BTR,KBTR,30.533167,-91.149639,70,-6,A,"Baton Rouge, LA",909,922,934,943,5.382838283828383,12.326464208242957,31.0,172.0,"Fri, Oct  7, 2005","Mon, Oct 31, 2005"
 3711,Burlington International,Burlington,United States,BTV,KBTV,44.471861,-73.153278,335,-5,A,"Burlington, VT",761,762,779,781,4.2378449408672845,14.45931758530184,63.0,105.0,"Fri, Oct 14, 2005","Mon, Oct 10, 2005"

@@ -22,7 +22,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3495,Boise Air Terminal,Boise,United States,BOI,KBOI,43.564361,-116.222861,2871,-7,A,"Boise, ID",1017,1016,1022,1022,3.1386430678466084,8.90157480314961,10.0,70.0,"Thu, Mar 23, 2000","Thu, Mar  9, 2000"
 3448,General Edward Lawrence Logan International,Boston,United States,BOS,KBOS,42.364347,-71.005181,19,-5,A,"Boston, MA",9217,9209,9576,9570,7.870999240533791,18.642415028776206,66.0,180.0,"Fri, Mar 17, 2000","Fri, Mar 17, 2000"
 3738,Brownsville South Padre Island International,Brownsville,United States,BRO,KBRO,25.906833,-97.425861,22,-6,A,"Brownsville, TX",8,8,8,8,4.0,10.0,9.0,23.0,"Sat, Mar 11, 2000","Sun, Mar 12, 2000"
-3571,Wiley Post Will RogersMemorial,Barrow,United States,BRW,PABR,71.285446,-156.766003,44,-9,A,"Barrow, AK",70,68,76,76,3.1285714285714286,5.705882352941177,9.0,20.0,"Mon, Mar 27, 2000","Fri, Mar 31, 2000"
+3571,Wiley Post Will Rogers Memorial,Barrow,United States,BRW,PABR,71.285446,-156.766003,44,-9,A,"Barrow, AK",70,68,76,76,3.1285714285714286,5.705882352941177,9.0,20.0,"Mon, Mar 27, 2000","Fri, Mar 31, 2000"
 3846,Baton Rouge Metro-Ryan Field,Baton Rouge,United States,BTR,KBTR,30.533167,-91.149639,70,-6,A,"Baton Rouge, LA",396,393,399,399,4.303030303030298,10.631043256997465,15.0,60.0,"Thu, Mar  2, 2000","Wed, Mar  1, 2000"
 3711,Burlington International,Burlington,United States,BTV,KBTV,44.471861,-73.153278,335,-5,A,"Burlington, VT",211,214,217,217,4.260663507109,13.682242990654206,14.0,86.0,"Thu, Mar 16, 2000","Sun, Mar 19, 2000"
 3820,Buffalo Niagara International,Buffalo,United States,BUF,KBUF,42.940525,-78.732167,724,-5,A,"Buffalo, NY",1466,1459,1492,1488,3.758526603001363,12.088416723783405,53.0,134.0,"Thu, Mar 23, 2000","Wed, Mar 15, 2000"

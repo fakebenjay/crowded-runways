@@ -36,7 +36,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3448,General Edward Lawrence Logan International,Boston,United States,BOS,KBOS,42.364347,-71.005181,19,-5,A,"Boston, MA",8800,8797,8877,8878,6.705795454545455,17.44015005115384,36.0,124.0,"Tue, Nov 10, 2009","Thu, Nov 26, 2009"
 5725,Brunswick Golden Isles Airport,Brunswick,United States,BQK,KBQK,31.2588,-81.4665,26,-5,A,"Brunswick, GA",76,76,76,76,2.986842105263158,18.84210526315789,5.0,70.0,"Sat, Nov 21, 2009","Tue, Nov 24, 2009"
 3738,Brownsville South Padre Island International,Brownsville,United States,BRO,KBRO,25.906833,-97.425861,22,-6,A,"Brownsville, TX",230,230,231,230,4.239130434782612,10.734782608695655,8.0,41.0,"Sun, Nov 15, 2009","Fri, Nov 20, 2009"
-3571,Wiley Post Will RogersMemorial,Barrow,United States,BRW,PABR,71.285446,-156.766003,44,-9,A,"Barrow, AK",64,64,65,65,4.343750000000002,5.375,7.0,27.0,"Fri, Nov  6, 2009","Mon, Nov  2, 2009"
+3571,Wiley Post Will Rogers Memorial,Barrow,United States,BRW,PABR,71.285446,-156.766003,44,-9,A,"Barrow, AK",64,64,65,65,4.343750000000002,5.375,7.0,27.0,"Fri, Nov  6, 2009","Mon, Nov  2, 2009"
 4022,Bert Mooney Airport,Butte,United States,BTM,KBTM,45.954806,-112.497472,5550,-7,A,"Butte, MT",54,54,55,55,4.074074074074072,11.425925925925926,13.0,32.0,"Sat, Nov 14, 2009","Thu, Nov 26, 2009"
 3846,Baton Rouge Metro-Ryan Field,Baton Rouge,United States,BTR,KBTR,30.533167,-91.149639,70,-6,A,"Baton Rouge, LA",727,729,730,731,4.437414030261348,10.898491083676266,58.0,58.0,"Mon, Nov 30, 2009","Tue, Nov 24, 2009"
 3711,Burlington International,Burlington,United States,BTV,KBTV,44.471861,-73.153278,335,-5,A,"Burlington, VT",452,453,453,454,4.738938053097337,17.768211920529822,26.0,103.0,"Fri, Nov 20, 2009","Mon, Nov 23, 2009"

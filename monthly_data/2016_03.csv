@@ -39,7 +39,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 5725,Brunswick Golden Isles Airport,Brunswick,United States,BQK,KBQK,31.2588,-81.4665,26,-5,A,"Brunswick, GA",89,89,89,89,3.4269662921348316,16.41573033707865,5.0,49.0,"Fri, Mar  4, 2016","Thu, Mar 24, 2016"
 6957,Brainerd Lakes Regional,Brainerd,United States,BRD,KBRD,46.398308,-94.138078,1226,-6,U,"Brainerd, MN",53,53,54,54,5.60377358490566,16.660377358490575,14.0,85.0,"Fri, Mar  4, 2016","Fri, Mar  4, 2016"
 3738,Brownsville South Padre Island International,Brownsville,United States,BRO,KBRO,25.906833,-97.425861,22,-6,A,"Brownsville, TX",201,201,204,204,5.248756218905477,12.069651741293532,12.0,61.0,"Thu, Mar 17, 2016","Wed, Mar 30, 2016"
-3571,Wiley Post Will RogersMemorial,Barrow,United States,BRW,PABR,71.285446,-156.766003,44,-9,A,"Barrow, AK",74,74,79,79,4.60810810810811,5.743243243243243,7.0,22.0,"Sun, Mar  6, 2016","Thu, Mar 24, 2016"
+3571,Wiley Post Will Rogers Memorial,Barrow,United States,BRW,PABR,71.285446,-156.766003,44,-9,A,"Barrow, AK",74,74,79,79,4.60810810810811,5.743243243243243,7.0,22.0,"Sun, Mar  6, 2016","Thu, Mar 24, 2016"
 4022,Bert Mooney Airport,Butte,United States,BTM,KBTM,45.954806,-112.497472,5550,-7,A,"Butte, MT",57,57,58,58,3.6315789473684212,17.10526315789474,6.0,52.0,"Wed, Mar 30, 2016","Thu, Mar 24, 2016"
 3846,Baton Rouge Metro-Ryan Field,Baton Rouge,United States,BTR,KBTR,30.533167,-91.149639,70,-6,A,"Baton Rouge, LA",586,587,591,592,4.49658703071672,14.204429301533226,18.0,92.0,"Sun, Mar 13, 2016","Thu, Mar 17, 2016"
 3711,Burlington International,Burlington,United States,BTV,KBTV,44.471861,-73.153278,335,-5,A,"Burlington, VT",329,331,332,334,4.161094224924012,17.670694864048336,13.0,111.0,"Fri, Mar 25, 2016","Mon, Mar 14, 2016"
