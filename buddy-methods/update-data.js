@@ -11,8 +11,6 @@ function updateData(fileDate) {
     var longTaxiOutRange = data.map((d) => {return parseFloat(d.longest_taxi_out)})
     var longTaxiInRange = data.map((d) => {return parseFloat(d.longest_taxi_in)})
 
-    var valueSet
-
     //Set domain
     if (document.getElementById("avg-taxi-out-range").checked === true) {
       lgaSortAvgTaxiOut(data)
@@ -40,9 +38,15 @@ function updateData(fileDate) {
       ]);
     }
 
+    //Transition debugger here
+
     rangefinder(color.domain())
 
     data.sort((a, b) => {return a.total_takeoffs - b.total_takeoffs})
+
+    // var oldData = svg.selectAll("circle")._groups[0].forEach((c) => {
+    //   return c.__data__.iata_faa
+    // })
 
     svg.selectAll("circle").remove();
 
