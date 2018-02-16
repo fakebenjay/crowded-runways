@@ -156,12 +156,12 @@
 
 				var startDate = `${yearNumber}_${monthNumber}`
 
+				loadData(startDate)
+
 				document.getElementById('button').addEventListener('click', (e) => {
 					e.preventDefault()
 					loadData(startDate)
 				})
-
-				loadData(startDate)
 			</script>
 		</div>
 	</body>
