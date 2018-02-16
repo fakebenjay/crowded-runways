@@ -1,4 +1,4 @@
-function updateData(fileDate) {
+function loadData(fileDate) {
   var yearNumber = document.getElementById('year').value
   var monthNumber = document.getElementById('month').selectedIndex + 1
       monthNumber = ("0" + monthNumber).slice(-2);
