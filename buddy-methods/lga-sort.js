@@ -5,9 +5,14 @@ function lgaSortAvgTaxiOut(data) {
 
   if (data[0].iata_faa === "LGA") {
     document.getElementById('lga-sign').innerHTML = `LGA is the worst.<br>${data[data.length - 1].iata_faa} is the best.<br>Safe flight! ✈`
+    document.getElementById('lga-sign').className = 'worst'
   } else {
     document.getElementById('lga-sign').innerHTML = `LGA isn't the worst,<br>${data[0].iata_faa} is.<br>${data[data.length - 1].iata_faa} is the best.`
+    document.getElementById('lga-sign').className = 'not-worst'
   }
+
+  document.getElementById('lga-sign').addEventListener("mouseover", lgaMouseover)
+  document.getElementById('lga-sign').addEventListener("mouseout", lgaMouseout)
 }
 
 function lgaSortAvgTaxiIn(data) {
@@ -17,9 +22,14 @@ function lgaSortAvgTaxiIn(data) {
 
   if (data[0].iata_faa === "LGA") {
     document.getElementById('lga-sign').innerHTML = `LGA is the worst.<br>${data[data.length - 1].iata_faa} is the best.<br>Safe flight! ✈`
+    document.getElementById('lga-sign').className = 'worst'
   } else {
     document.getElementById('lga-sign').innerHTML = `LGA isn't the worst,<br>${data[0].iata_faa} is.<br>${data[data.length - 1].iata_faa} is the best.`
+    document.getElementById('lga-sign').className = 'not-worst'
   }
+
+  document.getElementById('lga-sign').addEventListener("mouseover", lgaMouseover)
+  document.getElementById('lga-sign').addEventListener("mouseout", lgaMouseout)
 }
 
 function lgaSortLongTaxiOut(data) {
@@ -29,9 +39,14 @@ function lgaSortLongTaxiOut(data) {
 
   if (data[0].iata_faa === "LGA") {
     document.getElementById('lga-sign').innerHTML = `LGA is the worst.<br>${data[data.length - 1].iata_faa} is the best.<br>Safe flight! ✈`
+    document.getElementById('lga-sign').className = 'worst'
   } else {
     document.getElementById('lga-sign').innerHTML = `LGA isn't the worst,<br>${data[0].iata_faa} is.<br>${data[data.length - 1].iata_faa} is the best.`
+    document.getElementById('lga-sign').className = 'not-worst'
   }
+
+  document.getElementById('lga-sign').addEventListener("mouseover", lgaMouseover)
+  document.getElementById('lga-sign').addEventListener("mouseout", lgaMouseout)
 }
 
 function lgaSortLongTaxiIn(data) {
@@ -41,7 +56,12 @@ function lgaSortLongTaxiIn(data) {
 
   if (data[0].iata_faa === "LGA") {
     document.getElementById('lga-sign').innerHTML = `LGA is the worst.<br>${data[data.length - 1].iata_faa} is the best.<br>Safe flight! ✈`
+    document.getElementById('lga-sign').className = 'worst'
   } else {
     document.getElementById('lga-sign').innerHTML = `LGA isn't the worst,<br>${data[0].iata_faa} is.<br>${data[data.length - 1].iata_faa} is the best.`
+    document.getElementById('lga-sign').className = 'not-worst'
   }
+
+  document.getElementById('lga-sign').addEventListener("mouseover", lgaMouseover)
+  document.getElementById('lga-sign').addEventListener("mouseout", lgaMouseout)
 }

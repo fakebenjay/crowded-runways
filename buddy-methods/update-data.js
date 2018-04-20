@@ -59,6 +59,9 @@ function loadData(fileDate) {
         .data(data)
         .enter()
         .append("circle")
+        .attr("id", function(d) {
+          return d.iata_faa
+        })
         .attr("cx", function(d) {
           return projection([d.longitude, d.latitude])[0];
         })
@@ -81,6 +84,22 @@ function loadData(fileDate) {
             var value = d.longest_taxi_in;
           }
           return color(value)
+        })
+        .attr('class', (d) => {
+          if (document.getElementById("avg-taxi-out-range").checked === true) {
+            lgaSortAvgTaxiOut(data)
+            var value = d.avg_taxi_out;
+          } else if (document.getElementById("avg-taxi-in-range").checked === true) {
+            lgaSortAvgTaxiIn(data)
+            var value = d.avg_taxi_in;
+          } else if (document.getElementById("long-taxi-out-range").checked === true) {
+            lgaSortLongTaxiOut(data)
+            var value = d.longest_taxi_out;
+          } else if (document.getElementById("long-taxi-in-range").checked === true) {
+            lgaSortLongTaxiIn(data)
+            var value = d.longest_taxi_in;
+          }
+          return `tier-${color.range().indexOf(color(value))+1}`
         })
         .style("stroke", "gray")
         .style("stroke-width", 0.25)
@@ -173,6 +192,10 @@ function loadData(fileDate) {
             .style("fill", (d) => {
               var value = d.avg_taxi_out;
               return color(value)
+            })
+            .attr('class', (d) => {
+              var value = d.avg_taxi_out;
+              return `tier-${color.range().indexOf(color(value))+1}`
             });
         } else if (document.getElementById("avg-taxi-in-range").checked === true) {
           color.domain([
@@ -185,7 +208,11 @@ function loadData(fileDate) {
             .style("fill", (d) => {
               var value = d.avg_taxi_in;
               return color(value)
-            });
+            })
+            .attr('class', (d) => {
+              var value = d.avg_taxi_in;
+              return `tier-${color.range().indexOf(color(value))+1}`
+            });;
         } else if (document.getElementById("long-taxi-out-range").checked === true) {
           color.domain([
             d3.min(longTaxiOutRange, function(d) { return d; }),
@@ -197,6 +224,10 @@ function loadData(fileDate) {
             .style("fill", (d) => {
               var value = d.longest_taxi_out;
               return color(value)
+            })
+            .attr('class', (d) => {
+              var value = d.longest_taxi_out;
+              return `tier-${color.range().indexOf(color(value))+1}`
             });
         } else if (document.getElementById("long-taxi-in-range").checked === true) {
           color.domain([
@@ -209,6 +240,10 @@ function loadData(fileDate) {
             .style("fill", (d) => {
               var value = d.longest_taxi_in;
               return color(value)
+            })
+            .attr('class', (d) => {
+              var value = d.longest_taxi_in;
+              return `tier-${color.range().indexOf(color(value))+1}`
             });
         }
       })
