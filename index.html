@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="utf-8">
 		<title>Crowded Runways</title>
@@ -14,87 +15,89 @@
 		<script src="buddy-methods/lga-sort.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
+
 	<body>
-	<div id="left">
-		<div class="formbox">
-			<h3>Crowded Runways</h3>
-			<br class="small-break">
-			<div>
-				<label><strong>Color Scale</strong></label><br>
-				<input class="radio" type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
-				<input class="radio" type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
-				<input class="radio" type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
-				<input class="radio" type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
+		<div id="left">
+			<div class="formbox">
+				<h3>Crowded Runways</h3>
+				<br class="small-break">
+				<div>
+					<label><strong>Color Scale</strong></label><br>
+					<input class="radio" type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
+					<input class="radio" type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
+					<input class="radio" type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
+					<input class="radio" type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
+				</div>
+				<br class="small-break">
+				<div>
+					<label><strong>Date: </strong></label><label id="date"></label><br>
+					<label>Year</label>
+					<select id="year">
+						<option id="year-2018">2018</option>
+						<option id="year-2017">2017</option>
+						<option id="year-2016">2016</option>
+						<option id="year-2015">2015</option>
+						<option id="year-2014">2014</option>
+						<option id="year-2013">2013</option>
+						<option id="year-2012">2012</option>
+						<option id="year-2011">2011</option>
+						<option id="year-2010">2010</option>
+						<option id="year-2009">2009</option>
+						<option id="year-2008">2008</option>
+						<option id="year-2007">2007</option>
+						<option id="year-2006">2006</option>
+						<option id="year-2005">2005</option>
+						<option id="year-2004">2004</option>
+						<option id="year-2003">2003</option>
+						<option id="year-2002">2002</option>
+						<option id="year-2001">2001</option>
+						<option id="year-2000">2000</option>
+						<option id="year-1999">1999</option>
+						<option id="year-1998">1998</option>
+						<option id="year-1997">1997</option>
+						<option id="year-1996">1996</option>
+						<option id="year-1995">1995</option>
+					</select>
+					<br>
+					<label>Month</label>
+					<select id="month">
+						<option id="month-01">January</option>
+						<option id="month-02">February</option>
+						<option id="month-03">March</option>
+						<option id="month-04">April</option>
+						<option id="month-05">May</option>
+						<option id="month-06">June</option>
+						<option id="month-07" selected="selected">July</option>
+						<option id="month-08">August</option>
+						<option id="month-09">September</option>
+						<option id="month-10">October</option>
+						<option id="month-11">November</option>
+						<option id="month-12">December</option>
+					</select>
+				</div>
 			</div>
-			<br class="small-break">
-			<div>
-				<label><strong>Date</strong></label><br>
-				<label>Year</label>
-				<select id="year">
-					<option id="year-2017">2017</option>
-					<option id="year-2016">2016</option>
-					<option id="year-2015">2015</option>
-					<option id="year-2014">2014</option>
-					<option id="year-2013">2013</option>
-					<option id="year-2012">2012</option>
-					<option id="year-2011">2011</option>
-					<option id="year-2010">2010</option>
-					<option id="year-2009">2009</option>
-					<option id="year-2008">2008</option>
-					<option id="year-2007">2007</option>
-					<option id="year-2006">2006</option>
-					<option id="year-2005">2005</option>
-					<option id="year-2004">2004</option>
-					<option id="year-2003">2003</option>
-					<option id="year-2002">2002</option>
-					<option id="year-2001">2001</option>
-					<option id="year-2000">2000</option>
-					<option id="year-1999">1999</option>
-					<option id="year-1998">1998</option>
-					<option id="year-1997">1997</option>
-					<option id="year-1996">1996</option>
-					<option id="year-1995">1995</option>
-				</select>
-			<br>
-				<label>Month</label>
-				<select id="month">
-					<option id="month-01">January</option>
-					<option id="month-02">February</option>
-					<option id="month-03">March</option>
-					<option id="month-04">April</option>
-					<option id="month-05">May</option>
-					<option id="month-06">June</option>
-					<option id="month-07">July</option>
-					<option id="month-08">August</option>
-					<option id="month-09">September</option>
-					<option id="month-10">October</option>
-					<option id="month-11">November</option>
-					<option id="month-12" selected="selected">December</option>
-				</select>
-			</div>
-		</div>
 			<a id="button" name="update-button" type="button" href="updateData(fileDate)">
 				<div class="yellow-formbox">
 					<h3>ENTER ➔</h3>
 				</div>
 			</a>
-		<br class="sidebar">
+			<br class="sidebar">
 
-		<div id="lga-sign"></div>
+			<div id="lga-sign"></div>
 
-		<br class="sidebar">
+			<br class="sidebar">
 
-		<div id="scale-sign">
-			<div class="scale-top" id="scale-1"></div>
-			<div class="scale-mid" id="scale-2"></div>
-			<div class="scale-mid" id="scale-3"></div>
-			<div class="scale-mid" id="scale-4"></div>
-			<div class="scale-mid" id="scale-5"></div>
-			<div class="scale-mid" id="scale-6"></div>
-			<div class="scale-bottom" id="scale-7"></div>
+			<div id="scale-sign">
+				<div class="scale-top" id="scale-1"></div>
+				<div class="scale-mid" id="scale-2"></div>
+				<div class="scale-mid" id="scale-3"></div>
+				<div class="scale-mid" id="scale-4"></div>
+				<div class="scale-mid" id="scale-5"></div>
+				<div class="scale-mid" id="scale-6"></div>
+				<div class="scale-bottom" id="scale-7"></div>
+			</div>
+
 		</div>
-
-	</div>
 		<div id="right">
 			<div class="hidden" id="tooltip">
 				<h1 id="airport-code"></h1>
@@ -132,12 +135,13 @@
 				.attr("width", w)
 				.attr("height", h);
 
-				if (document.getElementById("year-2017").selected === true) {
-					// Un-comment these out and adjust when 2018 data arrives
-
-					// d3.select("option#month-10").classed("hidden", true);
-					// d3.select("option#month-11").classed("hidden", true);
-					// d3.select("option#month-12").classed("hidden", true);
+				if (document.getElementById("year-2018").selected === true) {
+					// Un-comment these out and adjust when 2019 data arrives
+					d3.select("option#month-08").classed("hidden", true);
+					d3.select("option#month-09").classed("hidden", true);
+					d3.select("option#month-10").classed("hidden", true);
+					d3.select("option#month-11").classed("hidden", true);
+					d3.select("option#month-12").classed("hidden", true);
 				}
 
 				// Not sure why these conditionals aren't working
