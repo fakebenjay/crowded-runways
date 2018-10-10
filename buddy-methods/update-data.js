@@ -4,11 +4,15 @@ function loadData(fileDate) {
 	var monthNumber = document.getElementById('month').selectedIndex + 1
 	monthNumber = ("0" + monthNumber).slice(-2);
 
-	document.querySelector('#date').innerText = `${monthName} ${yearNumber}`
-
 	var fileDate = `${yearNumber}_${monthNumber}`
 
 	d3.csv(`monthly_data/${fileDate}.csv`, (data) => {
+		if (data) {
+			document.querySelector('#date').innerText = `${monthName} ${yearNumber}`
+		} else {
+			document.querySelector('#date').innerText = `Invalid Month`
+		}
+
 		var avgTaxiOutRange = data.map((d) => { return parseFloat(d.avg_taxi_out) })
 		var avgTaxiInRange = data.map((d) => { return parseFloat(d.avg_taxi_in) })
 		var longTaxiOutRange = data.map((d) => { return parseFloat(d.longest_taxi_out) })
