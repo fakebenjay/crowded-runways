@@ -197,3 +197,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3873,Eglin AFB,Valparaiso,United States,VPS,KVPS,30.48325,-86.5254,87,-6,A,"Valparaiso, FL",85,86,86,86,6.694117647058824,8.441860465116276,11.0,25.0,"Thu, Sep 26, 1996","Mon, Sep  9, 1996"
 5969,Wrangell Airport,Wrangell,United States,WRG,PAWG,56.4843,-132.37,44,-9,A,"Wrangell, AK",58,58,60,60,2.5172413793103448,6.344827586206897,5.0,21.0,"Mon, Sep  2, 1996","Wed, Sep 25, 1996"
 6803,Yakutat,Yakutat,United States,YAK,PAYA,59.3012,-139.3937,33,-9,A,"Yakutat, AK",58,59,60,60,2.7586206896551717,9.59322033898305,6.0,22.0,"Mon, Sep  9, 1996","Fri, Sep  6, 1996"
+2883,Cyril E. King,St. Thomas,Virgin Islands,STT,TIST,18.337306,-64.973361,23,-4,U,"Charlotte Amalie, VI",141,139,153,153,3.900709219858155,9.798561151079134,10.0,26.0,"Sun, Sep  1, 1996","Fri, Sep 27, 1996"
+2884,Henry E. Rohlsen,St. Croix Island,Virgin Islands,STX,TISX,17.701889,-64.798556,74,-4,U,"Christiansted, VI",81,80,90,90,3.753086419753087,10.224999999999998,6.0,25.0,"Sun, Sep  1, 1996","Thu, Sep 19, 1996"
+2885,Rafael Hernández,Aguadilla,Puerto Rico,BQN,TJBQ,18.494861,-67.129444,237,-4,U,"Aguadilla, PR",3,3,3,3,3.3333333333333335,14.666666666666666,4.0,17.0,"Mon, Sep  2, 1996","Tue, Sep  3, 1996"
+2890,Luis Muñoz Marín International,San Juan,Puerto Rico,SJU,TJSJ,18.439417,-66.001833,9,-4,U,"San Juan, PR",1310,1324,1396,1412,6.171755725190844,15.636706948640484,77.0,73.0,"Sun, Sep 15, 1996","Wed, Sep  4, 1996"

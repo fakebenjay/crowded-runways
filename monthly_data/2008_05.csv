@@ -281,3 +281,8 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 6803,Yakutat,Yakutat,United States,YAK,PAYA,59.3012,-139.3937,33,-9,A,"Yakutat, AK",62,62,62,62,3.7096774193548385,6.161290322580645,6.0,13.0,"Sat, May 10, 2008","Thu, May 15, 2008"
 5779,Yakima Air Terminal-McAllister Field,Yakima,United States,YKM,KYKM,46.5682,-120.544,1095,-8,A,"Yakima, WA",25,26,25,26,3.6,6.3076923076923075,6.0,11.0,"Wed, May 21, 2008","Thu, May  1, 2008"
 3596,Yuma MCAS Yuma International,Yuma,United States,YUM,KYUM,32.656578,-114.60598,216,-7,N,"Yuma, AZ",377,376,383,384,4.896551724137929,13.539893617021281,30.0,52.0,"Mon, May  5, 2008","Fri, May 23, 2008"
+2883,Cyril E. King,St. Thomas,Virgin Islands,STT,TIST,18.337306,-64.973361,23,-4,U,"Charlotte Amalie, VI",243,243,244,244,4.5102880658436195,12.246913580246913,12.0,28.0,"Fri, May  9, 2008","Sun, May 11, 2008"
+2884,Henry E. Rohlsen,St. Croix Island,Virgin Islands,STX,TISX,17.701889,-64.798556,74,-4,U,"Christiansted, VI",41,41,41,41,4.048780487804878,12.878048780487806,8.0,39.0,"Sat, May  3, 2008","Wed, May 21, 2008"
+2885,Rafael Hernández,Aguadilla,Puerto Rico,BQN,TJBQ,18.494861,-67.129444,237,-4,U,"Aguadilla, PR",137,137,137,137,4.978102189781022,11.2043795620438,13.0,31.0,"Mon, May  5, 2008","Fri, May  2, 2008"
+2889,Aeropuerto Mercedita,Ponce,Puerto Rico,PSE,TJPS,18.008306,-66.563028,29,-4,U,"Ponce, PR",62,62,62,62,4.596774193548386,12.5,13.0,36.0,"Fri, May 23, 2008","Sat, May 10, 2008"
+2890,Luis Muñoz Marín International,San Juan,Puerto Rico,SJU,TJSJ,18.439417,-66.001833,9,-4,U,"San Juan, PR",1840,1833,1856,1853,6.0858695652173935,13.804146208401528,44.0,56.0,"Wed, May  7, 2008","Sun, May 25, 2008"

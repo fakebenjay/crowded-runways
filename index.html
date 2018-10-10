@@ -4,7 +4,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Crowded Runways</title>
-		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="d3-composite-projections.js"></script>
+		<script src="d3.v4.min.js"></script>
 		<script src="buddy-methods/numberizer.js"></script>
 		<script src="buddy-methods/small-numberizer.js"></script>
 		<script src="buddy-methods/scale-hide.js"></script>
@@ -117,7 +118,7 @@
 				var h = 650;
 
 				//Define map projection
-				var projection = d3.geoAlbersUsa()
+				var projection = d3.geoAlbersUsaTerritories()
 				.translate([w/2, h/2])
 				.scale([1200]);
 

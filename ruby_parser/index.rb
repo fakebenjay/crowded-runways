@@ -80,8 +80,6 @@ Dir.foreach('../raw_data/') do |item|
     end
   end
 
-  puts "#{item} done!"
-
   counter = 0
 
   CSV.open("../monthly_data/#{item.split('_RAW.').join('.')}", 'w') do |temp_csv|
@@ -96,4 +94,5 @@ Dir.foreach('../raw_data/') do |item|
       counter += 1
     end
   end
+  puts "#{item} done!"
 end

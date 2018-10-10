@@ -196,3 +196,6 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 3873,Eglin AFB,Valparaiso,United States,VPS,KVPS,30.48325,-86.5254,87,-6,A,"Valparaiso, FL",87,86,93,93,6.563218390804598,9.116279069767437,14.0,34.0,"Thu, Dec 10, 1998","Fri, Dec  4, 1998"
 5969,Wrangell Airport,Wrangell,United States,WRG,PAWG,56.4843,-132.37,44,-9,A,"Wrangell, AK",49,53,60,60,3.061224489795918,6.830188679245283,7.0,33.0,"Sat, Dec 12, 1998","Mon, Dec  7, 1998"
 6803,Yakutat,Yakutat,United States,YAK,PAYA,59.3012,-139.3937,33,-9,A,"Yakutat, AK",57,58,60,60,3.3859649122807016,5.982758620689655,8.0,20.0,"Fri, Dec  4, 1998","Fri, Dec  4, 1998"
+2883,Cyril E. King,St. Thomas,Virgin Islands,STT,TIST,18.337306,-64.973361,23,-4,U,"Charlotte Amalie, VI",247,246,247,246,4.064777327935223,11.658536585365853,13.0,93.0,"Thu, Dec 17, 1998","Sat, Dec  5, 1998"
+2884,Henry E. Rohlsen,St. Croix Island,Virgin Islands,STX,TISX,17.701889,-64.798556,74,-4,U,"Christiansted, VI",93,93,93,93,3.6666666666666665,11.225806451612907,6.0,30.0,"Sat, Dec  5, 1998","Thu, Dec 10, 1998"
+2890,Luis Muñoz Marín International,San Juan,Puerto Rico,SJU,TJSJ,18.439417,-66.001833,9,-4,U,"San Juan, PR",1755,1754,1765,1766,7.063247863247863,15.290193842645381,75.0,60.0,"Sat, Dec  5, 1998","Sun, Dec 27, 1998"

@@ -208,3 +208,6 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 5969,Wrangell Airport,Wrangell,United States,WRG,PAWG,56.4843,-132.37,44,-9,A,"Wrangell, AK",61,62,62,62,2.918032786885246,5.967741935483873,5.0,15.0,"Thu, Oct  4, 2001","Mon, Oct 29, 2001"
 4356,NW Arkansas Regional,Bentonville,United States,XNA,KXNA,36.2818694,-94.3068111,1287,-6,A,"Fayetteville, AR",453,448,477,475,4.0286975717439315,10.02008928571428,40.0,154.0,"Wed, Oct 10, 2001","Wed, Oct 24, 2001"
 6803,Yakutat,Yakutat,United States,YAK,PAYA,59.3012,-139.3937,33,-9,A,"Yakutat, AK",61,61,62,62,3.5245901639344264,6.262295081967213,6.0,12.0,"Mon, Oct 29, 2001","Fri, Oct  5, 2001"
+2883,Cyril E. King,St. Thomas,Virgin Islands,STT,TIST,18.337306,-64.973361,23,-4,U,"Charlotte Amalie, VI",152,153,153,153,3.907894736842106,11.300653594771239,7.0,37.0,"Wed, Oct 17, 2001","Mon, Oct  8, 2001"
+2884,Henry E. Rohlsen,St. Croix Island,Virgin Islands,STX,TISX,17.701889,-64.798556,74,-4,U,"Christiansted, VI",62,62,62,62,3.370967741935484,10.516129032258064,9.0,19.0,"Fri, Oct  5, 2001","Mon, Oct  1, 2001"
+2890,Luis Muñoz Marín International,San Juan,Puerto Rico,SJU,TJSJ,18.439417,-66.001833,9,-4,U,"San Juan, PR",1461,1460,1477,1478,5.456536618754284,13.967808219178082,39.0,69.0,"Wed, Oct 10, 2001","Fri, Oct 26, 2001"

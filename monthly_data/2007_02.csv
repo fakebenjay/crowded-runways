@@ -280,3 +280,8 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 4356,NW Arkansas Regional,Bentonville,United States,XNA,KXNA,36.2818694,-94.3068111,1287,-6,A,"Fayetteville, AR",981,981,1058,1055,5.228338430173293,13.417940876656473,30.0,104.0,"Thu, Feb  1, 2007","Fri, Feb  9, 2007"
 6803,Yakutat,Yakutat,United States,YAK,PAYA,59.3012,-139.3937,33,-9,A,"Yakutat, AK",56,56,56,56,3.5714285714285716,6.178571428571429,6.0,25.0,"Wed, Feb  7, 2007","Tue, Feb 27, 2007"
 3596,Yuma MCAS Yuma International,Yuma,United States,YUM,KYUM,32.656578,-114.60598,216,-7,N,"Yuma, AZ",269,270,272,272,4.5910780669145,12.059259259259258,18.0,83.0,"Wed, Feb  7, 2007","Wed, Feb 14, 2007"
+2883,Cyril E. King,St. Thomas,Virgin Islands,STT,TIST,18.337306,-64.973361,23,-4,U,"Charlotte Amalie, VI",281,279,288,288,4.893238434163701,13.666666666666668,33.0,60.0,"Sat, Feb 24, 2007","Sun, Feb 18, 2007"
+2884,Henry E. Rohlsen,St. Croix Island,Virgin Islands,STX,TISX,17.701889,-64.798556,74,-4,U,"Christiansted, VI",43,42,44,44,3.5348837209302326,12.428571428571429,17.0,23.0,"Mon, Feb  5, 2007","Tue, Feb 13, 2007"
+2885,Rafael Hernández,Aguadilla,Puerto Rico,BQN,TJBQ,18.494861,-67.129444,237,-4,U,"Aguadilla, PR",92,92,98,98,4.695652173913041,12.315217391304348,9.0,30.0,"Sat, Feb 24, 2007","Wed, Feb 21, 2007"
+2889,Aeropuerto Mercedita,Ponce,Puerto Rico,PSE,TJPS,18.008306,-66.563028,29,-4,U,"Ponce, PR",53,53,56,56,4.773584905660377,12.358490566037736,8.0,21.0,"Wed, Feb 21, 2007","Mon, Feb 12, 2007"
+2890,Luis Muñoz Marín International,San Juan,Puerto Rico,SJU,TJSJ,18.439417,-66.001833,9,-4,U,"San Juan, PR",1941,1936,2000,1995,6.2560535806285476,16.72985537190083,57.0,84.0,"Sat, Feb 10, 2007","Tue, Feb 13, 2007"

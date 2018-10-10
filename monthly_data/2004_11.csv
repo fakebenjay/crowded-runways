@@ -264,3 +264,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 4356,NW Arkansas Regional,Bentonville,United States,XNA,KXNA,36.2818694,-94.3068111,1287,-6,A,"Fayetteville, AR",1206,1200,1269,1252,6.83250414593698,13.105000000000004,1381.0,136.0,"Wed, Nov 24, 2004","Tue, Nov 23, 2004"
 6803,Yakutat,Yakutat,United States,YAK,PAYA,59.3012,-139.3937,33,-9,A,"Yakutat, AK",53,56,58,58,4.3584905660377355,5.928571428571429,7.0,37.0,"Thu, Nov 18, 2004","Mon, Nov 29, 2004"
 3596,Yuma MCAS Yuma International,Yuma,United States,YUM,KYUM,32.656578,-114.60598,216,-7,N,"Yuma, AZ",88,87,89,89,3.1818181818181817,7.724137931034483,6.0,17.0,"Sun, Nov 14, 2004","Mon, Nov  1, 2004"
+2883,Cyril E. King,St. Thomas,Virgin Islands,STT,TIST,18.337306,-64.973361,23,-4,U,"Charlotte Amalie, VI",282,283,283,283,4.333333333333332,12.307420494699642,15.0,57.0,"Sat, Nov 13, 2004","Sat, Nov 20, 2004"
+2884,Henry E. Rohlsen,St. Croix Island,Virgin Islands,STX,TISX,17.701889,-64.798556,74,-4,U,"Christiansted, VI",34,34,34,34,3.911764705882353,10.382352941176471,7.0,16.0,"Sat, Nov  6, 2004","Thu, Nov 11, 2004"
+2885,Rafael Hernández,Aguadilla,Puerto Rico,BQN,TJBQ,18.494861,-67.129444,237,-4,U,"Aguadilla, PR",60,60,60,60,4.850000000000002,13.316666666666666,9.0,31.0,"Mon, Nov  1, 2004","Mon, Nov  8, 2004"
+2890,Luis Muñoz Marín International,San Juan,Puerto Rico,SJU,TJSJ,18.439417,-66.001833,9,-4,U,"San Juan, PR",2045,2045,2062,2059,5.179951100244505,13.894376528117359,52.0,48.0,"Sat, Nov 13, 2004","Sat, Nov 20, 2004"

@@ -214,3 +214,7 @@ airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,
 5969,Wrangell Airport,Wrangell,United States,WRG,PAWG,56.4843,-132.37,44,-9,A,"Wrangell, AK",62,62,62,62,2.7258064516129026,5.741935483870969,5.0,14.0,"Sat, May 19, 2001","Sat, May  5, 2001"
 4356,NW Arkansas Regional,Bentonville,United States,XNA,KXNA,36.2818694,-94.3068111,1287,-6,A,"Fayetteville, AR",493,488,510,512,4.245436105476672,9.981557377049176,19.0,80.0,"Wed, May  9, 2001","Wed, May 30, 2001"
 6803,Yakutat,Yakutat,United States,YAK,PAYA,59.3012,-139.3937,33,-9,A,"Yakutat, AK",59,61,61,62,3.559322033898305,6.918032786885246,14.0,20.0,"Fri, May 11, 2001","Sat, May  5, 2001"
+2883,Cyril E. King,St. Thomas,Virgin Islands,STT,TIST,18.337306,-64.973361,23,-4,U,"Charlotte Amalie, VI",267,268,268,268,4.32209737827715,12.649253731343284,20.0,68.0,"Sat, May  5, 2001","Wed, May  9, 2001"
+2884,Henry E. Rohlsen,St. Croix Island,Virgin Islands,STX,TISX,17.701889,-64.798556,74,-4,U,"Christiansted, VI",62,62,62,62,3.903225806451613,12.290322580645162,9.0,27.0,"Sat, May  5, 2001","Fri, May  4, 2001"
+2885,Rafael Hernández,Aguadilla,Puerto Rico,BQN,TJBQ,18.494861,-67.129444,237,-4,U,"Aguadilla, PR",23,23,23,23,4.869565217391305,13.434782608695652,7.0,23.0,"Thu, May 10, 2001","Sun, May 27, 2001"
+2890,Luis Muñoz Marín International,San Juan,Puerto Rico,SJU,TJSJ,18.439417,-66.001833,9,-4,U,"San Juan, PR",2288,2289,2335,2335,5.409527972027973,15.746614242027105,39.0,70.0,"Tue, May 22, 2001","Sun, May  6, 2001"
