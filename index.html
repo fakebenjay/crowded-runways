@@ -68,11 +68,11 @@
 						<option id="month-04">April</option>
 						<option id="month-05">May</option>
 						<option id="month-06">June</option>
-						<option id="month-07" selected="selected">July</option>
+						<option id="month-07">July</option>
 						<option id="month-08">August</option>
 						<option id="month-09">September</option>
 						<option id="month-10">October</option>
-						<option id="month-11">November</option>
+						<option id="month-11" selected="selected">November</option>
 						<option id="month-12">December</option>
 					</select>
 				</div>
@@ -138,10 +138,6 @@
 
 				if (document.getElementById("year-2018").selected === true) {
 					// Un-comment these out and adjust when 2019 data arrives
-					d3.select("option#month-08").classed("hidden", true);
-					d3.select("option#month-09").classed("hidden", true);
-					d3.select("option#month-10").classed("hidden", true);
-					d3.select("option#month-11").classed("hidden", true);
 					d3.select("option#month-12").classed("hidden", true);
 				}
 
