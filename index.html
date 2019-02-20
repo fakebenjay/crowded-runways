@@ -3,7 +3,13 @@
 
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Crowded Runways</title>
+		<script>
+			var host = "benjayingly.com";
+			if ((host == window.location.host) && (window.location.protocol != "https:"))
+				window.location.protocol = "https:";
+		</script>
 		<script src="d3-composite-projections.min.js"></script>
 		<script src="d3.v4.min.js"></script>
 		<script src="buddy-methods/numberizer.js"></script>
@@ -14,92 +20,92 @@
 		<script src="buddy-methods/us-map.js"></script>
 		<script src="buddy-methods/lga-mouseover.js"></script>
 		<script src="buddy-methods/lga-sort.js"></script>
+		<script src="buddy-methods/get-offset.js"></script>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" /> -->
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="width-orient.css">
 	</head>
 
 	<body>
-		<div id="left">
-			<div class="formbox">
-				<h3>Crowded Runways</h3>
-				<br class="small-break">
-				<div>
-					<label><strong>Color Scale</strong></label><br>
-					<input class="radio" type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
-					<input class="radio" type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
-					<input class="radio" type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
-					<input class="radio" type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
-				</div>
-				<br class="small-break">
-				<div>
-					<label><strong>Date: </strong></label><small id="date"></small><br>
-					<label>Year</label>
-					<select id="year">
-						<option id="year-2018">2018</option>
-						<option id="year-2017">2017</option>
-						<option id="year-2016">2016</option>
-						<option id="year-2015">2015</option>
-						<option id="year-2014">2014</option>
-						<option id="year-2013">2013</option>
-						<option id="year-2012">2012</option>
-						<option id="year-2011">2011</option>
-						<option id="year-2010">2010</option>
-						<option id="year-2009">2009</option>
-						<option id="year-2008">2008</option>
-						<option id="year-2007">2007</option>
-						<option id="year-2006">2006</option>
-						<option id="year-2005">2005</option>
-						<option id="year-2004">2004</option>
-						<option id="year-2003">2003</option>
-						<option id="year-2002">2002</option>
-						<option id="year-2001">2001</option>
-						<option id="year-2000">2000</option>
-						<option id="year-1999">1999</option>
-						<option id="year-1998">1998</option>
-						<option id="year-1997">1997</option>
-						<option id="year-1996">1996</option>
-						<option id="year-1995">1995</option>
-					</select>
-					<br>
-					<label>Month</label>
-					<select id="month">
-						<option id="month-01">January</option>
-						<option id="month-02">February</option>
-						<option id="month-03">March</option>
-						<option id="month-04">April</option>
-						<option id="month-05">May</option>
-						<option id="month-06">June</option>
-						<option id="month-07">July</option>
-						<option id="month-08">August</option>
-						<option id="month-09">September</option>
-						<option id="month-10">October</option>
-						<option id="month-11" selected="selected">November</option>
-						<option id="month-12">December</option>
-					</select>
+		<div id="left" class="wi-l-12 wi-p-100">
+			<div class="fl-left-p wi-p-48 wi-l-100">
+				<div class="formbox">
+					<h3>Crowded Runways</h3>
+					<br class="small-break">
+					<div>
+						<label><strong>Color Scale</strong></label><br>
+						<input class="radio" type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
+						<input class="radio" type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
+						<input class="radio" type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
+						<input class="radio" type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
+					</div>
+					<br class="small-break">
+					<div id='datebox'>
+						<label>Year</label>
+						<select id="year">
+							<option id="year-2018">2018</option>
+							<option id="year-2017">2017</option>
+							<option id="year-2016">2016</option>
+							<option id="year-2015">2015</option>
+							<option id="year-2014">2014</option>
+							<option id="year-2013">2013</option>
+							<option id="year-2012">2012</option>
+							<option id="year-2011">2011</option>
+							<option id="year-2010">2010</option>
+							<option id="year-2009">2009</option>
+							<option id="year-2008">2008</option>
+							<option id="year-2007">2007</option>
+							<option id="year-2006">2006</option>
+							<option id="year-2005">2005</option>
+							<option id="year-2004">2004</option>
+							<option id="year-2003">2003</option>
+							<option id="year-2002">2002</option>
+							<option id="year-2001">2001</option>
+							<option id="year-2000">2000</option>
+							<option id="year-1999">1999</option>
+							<option id="year-1998">1998</option>
+							<option id="year-1997">1997</option>
+							<option id="year-1996">1996</option>
+							<option id="year-1995">1995</option>
+						</select>
+						<br>
+						<label>Month</label>
+						<select id="month">
+							<option id="month-01">January</option>
+							<option id="month-02">February</option>
+							<option id="month-03">March</option>
+							<option id="month-04">April</option>
+							<option id="month-05">May</option>
+							<option id="month-06">June</option>
+							<option id="month-07">July</option>
+							<option id="month-08">August</option>
+							<option id="month-09">September</option>
+							<option id="month-10">October</option>
+							<option id="month-11" selected="selected">November</option>
+							<option id="month-12">December</option>
+						</select>
+					</div>
 				</div>
 			</div>
-			<a id="button" name="update-button" type="button" href="updateData(fileDate)">
-				<div class="yellow-formbox">
-					<h3>ENTER ➔</h3>
+			<br class="sidebar fl-left-p">
+			<div class="fl-right-p wi-p-48 wi-l-100">
+				<div id="lga-sign"></div>
+
+				<br class="sidebar">
+
+				<div id="scale-sign">
+					<div class="scale-top" id="scale-1"></div>
+					<div class="scale-mid" id="scale-2"></div>
+					<div class="scale-mid" id="scale-3"></div>
+					<div class="scale-mid" id="scale-4"></div>
+					<div class="scale-mid" id="scale-5"></div>
+					<div class="scale-mid" id="scale-6"></div>
+					<div class="scale-bottom" id="scale-7"></div>
 				</div>
-			</a>
-			<br class="sidebar">
-
-			<div id="lga-sign"></div>
-
-			<br class="sidebar">
-
-			<div id="scale-sign">
-				<div class="scale-top" id="scale-1"></div>
-				<div class="scale-mid" id="scale-2"></div>
-				<div class="scale-mid" id="scale-3"></div>
-				<div class="scale-mid" id="scale-4"></div>
-				<div class="scale-mid" id="scale-5"></div>
-				<div class="scale-mid" id="scale-6"></div>
-				<div class="scale-bottom" id="scale-7"></div>
 			</div>
 
 		</div>
-		<div id="right">
+		<div id="right" class="wi-l-88 wi-p-100">
 			<div class="hidden" id="tooltip">
 				<h1 id="airport-code"></h1>
 				<h3 id="location"></h3>
@@ -114,13 +120,20 @@
 				<script type="text/javascript">
 
 				//Width and height
-				var w = 1200;
-				var h = 650;
+				if (window.innerWidth > window.innerHeight) {
+					var w = window.innerWidth * .87;
+					var h = window.innerHeight * .87;
+					var scaleSize = window.innerWidth * .87
+				} else {
+					var w = window.innerWidth * .95;
+					var h = w * .55;
+					var scaleSize = window.innerWidth *.95;
+				}
 
 				//Define map projection
 				var projection = d3.geoAlbersUsaTerritories()
 				.translate([w/2, h/2])
-				.scale([1200]);
+				.scale([scaleSize]);
 
 				//Define path generator
 				var path = d3.geoPath()
@@ -165,7 +178,7 @@
 
 				loadData(startDate)
 
-				document.getElementById('button').addEventListener('click', (e) => {
+				document.getElementById('datebox').addEventListener('change', (e) => {
 					e.preventDefault()
 					loadData(startDate)
 				})

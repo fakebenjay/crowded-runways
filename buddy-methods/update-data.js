@@ -7,12 +7,6 @@ function loadData(fileDate) {
 	var fileDate = `${yearNumber}_${monthNumber}`
 
 	d3.csv(`monthly_data/${fileDate}.csv`, (data) => {
-		if (data) {
-			document.querySelector('#date').innerText = `${monthName} ${yearNumber}`
-		} else {
-			document.querySelector('#date').innerText = `Invalid Month`
-		}
-
 		var avgTaxiOutRange = data.map((d) => { return parseFloat(d.avg_taxi_out) })
 		var avgTaxiInRange = data.map((d) => { return parseFloat(d.avg_taxi_in) })
 		var longTaxiOutRange = data.map((d) => { return parseFloat(d.longest_taxi_out) })
@@ -75,7 +69,10 @@ function loadData(fileDate) {
 				.attr("cy", function (d) {
 					return projection([d.longitude, d.latitude])[1];
 				})
-				.attr("r", 5)
+				.attr("r", function () {
+					var width = document.querySelector('svg').getBoundingClientRect().width
+					return width / 250
+				})
 				.style("fill", (d) => {
 					if (document.getElementById("avg-taxi-out-range").checked === true) {
 						lgaSortAvgTaxiOut(data)
@@ -122,25 +119,32 @@ function loadData(fileDate) {
 					var takeoffsLandings = `Total Takeoffs: ${d.total_takeoffs}, Total Landings: ${d.total_landings}`
 
 					var coordinates = [d3.event.clientX, d3.event.clientY]
-					var divVertOffset = 260
-					var divHorizOffset = 260
+					var divVertOffset = document.querySelector('svg').getBoundingClientRect().height / 2.42
+					var divHorizOffset = document.querySelector('svg').getBoundingClientRect().width / 4.8
 					var windowHeight = document.getElementById('right').clientHeight
 					var windowWidth = document.getElementById('right').clientWidth
 
-					if (coordinates[1] + divVertOffset > windowHeight) {
-						d3.select("#tooltip")
-							.style("top", (coordinates[1] - divVertOffset) + "px")
-					} else {
-						d3.select("#tooltip")
-							.style("top", coordinates[1] + "px")
-					}
+					if (window.innerWidth > window.innerHeight) {
+						if (coordinates[1] + divVertOffset > windowHeight) {
+							d3.select("#tooltip")
+								.style("top", (coordinates[1] - divVertOffset) + "px")
+						} else {
+							d3.select("#tooltip")
+								.style("top", coordinates[1] + "px")
+						}
 
-					if (coordinates[0] + divHorizOffset > windowWidth) {
-						d3.select("#tooltip")
-							.style("left", (coordinates[0] - divHorizOffset) + "px")
+						if (coordinates[0] + divHorizOffset > windowWidth) {
+							d3.select("#tooltip")
+								.style("left", (coordinates[0] - divHorizOffset) + "px")
+						} else {
+							d3.select("#tooltip")
+								.style("left", coordinates[0] + "px")
+						}
 					} else {
+						var mapDiv = document.getElementById('right')
+
 						d3.select("#tooltip")
-							.style("left", coordinates[0] + "px")
+							.style("top", getOffset(mapDiv).bottom + "px")
 					}
 
 					d3.select("#tooltip")
