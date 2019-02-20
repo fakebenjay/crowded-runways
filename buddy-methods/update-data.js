@@ -124,28 +124,22 @@ function loadData(fileDate) {
 					var windowHeight = document.getElementById('right').clientHeight
 					var windowWidth = document.getElementById('right').clientWidth
 
-					if (window.innerWidth > window.innerHeight) {
-						if (coordinates[1] + divVertOffset > windowHeight) {
-							d3.select("#tooltip")
-								.style("top", (coordinates[1] - divVertOffset) + "px")
-						} else {
-							d3.select("#tooltip")
-								.style("top", coordinates[1] + "px")
-						}
-
-						if (coordinates[0] + divHorizOffset > windowWidth) {
-							d3.select("#tooltip")
-								.style("left", (coordinates[0] - divHorizOffset) + "px")
-						} else {
-							d3.select("#tooltip")
-								.style("left", coordinates[0] + "px")
-						}
-					} else {
-						var mapDiv = document.getElementById('right')
-
+					if (coordinates[1] + divVertOffset > windowHeight) {
 						d3.select("#tooltip")
-							.style("top", getOffset(mapDiv).bottom + "px")
+							.style("top", (coordinates[1] - divVertOffset) + "px")
+					} else {
+						d3.select("#tooltip")
+							.style("top", coordinates[1] + "px")
 					}
+
+					if (coordinates[0] + divHorizOffset > windowWidth) {
+						d3.select("#tooltip")
+							.style("left", (coordinates[0] - divHorizOffset) + "px")
+					} else {
+						d3.select("#tooltip")
+							.style("left", coordinates[0] + "px")
+					}
+
 
 					d3.select("#tooltip")
 						.select("h1#airport-code")

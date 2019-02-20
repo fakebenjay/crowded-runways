@@ -3,17 +3,15 @@
 
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Crowded Runways</title>
-		<script type="text/javascript">
-			if (screen.orientation.type.includes('landscape')) {
-				screen.lockOrientation('landscape');
-			} else {
-				screen.lockOrientation('portrait');
-			}
-		</script>
 		<script src="d3-composite-projections.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=.5">
 		<script src="d3.v4.min.js"></script>
+		<script type="text/javascript">
+			window.addEventListener('resize', function() {
+				document.querySelector('svg').setAttribute("x", 0);
+			});
+		</script>
 		<script src="buddy-methods/numberizer.js"></script>
 		<script src="buddy-methods/small-numberizer.js"></script>
 		<script src="buddy-methods/scale-hide.js"></script>
@@ -25,26 +23,31 @@
 		<script src="buddy-methods/get-offset.js"></script>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" /> -->
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="width-orient.css">
+		<link rel="stylesheet" type="text/css" href="width.css">
 	</head>
 
 	<body>
-		<div id="left" class="wi-l-12 wi-p-100">
-			<div class="fl-left-p wi-p-48 wi-l-100">
-				<div class="formbox">
-					<h3>Crowded Runways</h3>
-					<br class="small-break">
-					<div>
-						<label><strong>Color Scale</strong></label><br>
-						<input class="radio" type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
-						<input class="radio" type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
-						<input class="radio" type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
-						<input class="radio" type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
-					</div>
-					<br class="small-break">
-					<div id='datebox'>
-						<label>Year</label>
-						<select id="year">
+		<div id="info">
+			<h1>PLEASE ROTATE YOUR SCREEN AND THEN RELOAD THE PAGE FOR OPTIMAL VIEWING</h1>
+			<h2>Thank you!</h2>
+		</div>
+		<div id="container">
+			<div id="left" class="wi-12-l wi-20-m wi-30-s">
+				<div class="wi-100">
+					<div class="formbox">
+						<h3>Crowded Runways</h3>
+						<br class="small-break">
+						<div>
+							<label><strong>Color Scale</strong></label><br>
+							<input class="radio" type="radio" id="avg-taxi-out-range" name="color-scale" checked> Avg Taxi Out<br>
+							<input class="radio" type="radio" id="avg-taxi-in-range" name="color-scale"> Avg Taxi In<br>
+							<input class="radio" type="radio" id="long-taxi-out-range" name="color-scale"> Longest Taxi Out</br>
+							<input class="radio" type="radio" id="long-taxi-in-range" name="color-scale"> Longest Taxi In</br>
+						</div>
+						<br class="small-break">
+						<div id='datebox'>
+							<label>Year</label>
+							<select id="year">
 							<option id="year-2018">2018</option>
 							<option id="year-2017">2017</option>
 							<option id="year-2016">2016</option>
@@ -70,9 +73,9 @@
 							<option id="year-1996">1996</option>
 							<option id="year-1995">1995</option>
 						</select>
-						<br>
-						<label>Month</label>
-						<select id="month">
+							<br>
+							<label>Month</label>
+							<select id="month">
 							<option id="month-01">January</option>
 							<option id="month-02">February</option>
 							<option id="month-03">March</option>
@@ -86,32 +89,32 @@
 							<option id="month-11" selected="selected">November</option>
 							<option id="month-12">December</option>
 						</select>
+						</div>
 					</div>
 				</div>
-			</div>
-			<br class="sidebar fl-left-p">
-			<div class="fl-right-p wi-p-48 wi-l-100">
-				<div id="lga-sign"></div>
-
 				<br class="sidebar">
+				<div class="wi-100">
+					<div id="lga-sign"></div>
 
-				<div id="scale-sign">
-					<div class="scale-top" id="scale-1"></div>
-					<div class="scale-mid" id="scale-2"></div>
-					<div class="scale-mid" id="scale-3"></div>
-					<div class="scale-mid" id="scale-4"></div>
-					<div class="scale-mid" id="scale-5"></div>
-					<div class="scale-mid" id="scale-6"></div>
-					<div class="scale-bottom" id="scale-7"></div>
+					<br class="sidebar">
+
+					<div id="scale-sign">
+						<div class="scale-top" id="scale-1"></div>
+						<div class="scale-mid" id="scale-2"></div>
+						<div class="scale-mid" id="scale-3"></div>
+						<div class="scale-mid" id="scale-4"></div>
+						<div class="scale-mid" id="scale-5"></div>
+						<div class="scale-mid" id="scale-6"></div>
+						<div class="scale-bottom" id="scale-7"></div>
+					</div>
 				</div>
-			</div>
 
-		</div>
-		<div id="right" class="wi-l-88 wi-p-100">
-			<div class="hidden" id="tooltip">
-				<h1 id="airport-code"></h1>
-				<h3 id="location"></h3>
-				<h4 id="city-state"></h3><br>
+			</div>
+			<div id="right" class="wi-88-l wi-80-m w-70-s">
+				<div class="hidden" id="tooltip">
+					<h1 id="airport-code"></h1>
+					<h3 id="location"></h3>
+					<h4 id="city-state"></h3><br>
 				<span id="text-1"></span><br>
 				<span id="text-2"></span><br>
 				<span id="text-3"></span><br>
@@ -122,15 +125,9 @@
 				<script type="text/javascript">
 
 				//Width and height
-				if (window.innerWidth > window.innerHeight) {
-					var w = window.innerWidth * .87;
-					var h = window.innerHeight * .87;
-					var scaleSize = window.innerWidth * .87
-				} else {
-					var w = window.innerWidth * .95;
-					var h = w * .55;
-					var scaleSize = window.innerWidth *.95;
-				}
+				var w = window.innerWidth * .87;
+				var h = window.innerHeight * .87;
+				var scaleSize = window.innerWidth * .87
 
 				//Define map projection
 				var projection = d3.geoAlbersUsaTerritories()
@@ -185,6 +182,7 @@
 					loadData(startDate)
 				})
 			</script>
+		</div>
 		</div>
 	</body>
 </html>
