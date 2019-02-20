@@ -5,6 +5,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Crowded Runways</title>
+		<script type="text/javascript">
+			if (screen.orientation.type.includes('landscape')) {
+				screen.lockOrientation('landscape');
+			} else {
+				screen.lockOrientation('portrait');
+			}
+		</script>
 		<script src="d3-composite-projections.min.js"></script>
 		<script src="d3.v4.min.js"></script>
 		<script src="buddy-methods/numberizer.js"></script>
