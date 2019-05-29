@@ -48,6 +48,7 @@
 						<div id='datebox'>
 							<label>Year</label>
 							<select id="year">
+							<option id="year-2019">2019</option>
 							<option id="year-2018">2018</option>
 							<option id="year-2017">2017</option>
 							<option id="year-2016">2016</option>
@@ -77,7 +78,7 @@
 							<label>Month</label>
 							<select id="month">
 							<option id="month-01">January</option>
-							<option id="month-02">February</option>
+							<option id="month-02" selected="selected">February</option>
 							<option id="month-03">March</option>
 							<option id="month-04">April</option>
 							<option id="month-05">May</option>
@@ -86,7 +87,7 @@
 							<option id="month-08">August</option>
 							<option id="month-09">September</option>
 							<option id="month-10">October</option>
-							<option id="month-11" selected="selected">November</option>
+							<option id="month-11">November</option>
 							<option id="month-12">December</option>
 						</select>
 						</div>
@@ -145,11 +146,22 @@
 				//Create SVG element
 				var svg = d3.select("div#right")
 				.append("svg")
+				.attr("preserveAspectRatio", "xMinYMin meet")
 				.attr("width", w)
 				.attr("height", h);
 
-				if (document.getElementById("year-2018").selected === true) {
-					// Un-comment these out and adjust when 2019 data arrives
+				if (document.getElementById("year-2019").selected === true) {
+					// Un-comment these out and adjust when 2020 data arrives
+					// Don't forget to change in update-data.js as well
+					d3.select("option#month-03").classed("hidden", true);
+					d3.select("option#month-04").classed("hidden", true);
+					d3.select("option#month-05").classed("hidden", true);
+					d3.select("option#month-06").classed("hidden", true);
+					d3.select("option#month-07").classed("hidden", true);
+					d3.select("option#month-08").classed("hidden", true);
+					d3.select("option#month-09").classed("hidden", true);
+					d3.select("option#month-10").classed("hidden", true);
+					d3.select("option#month-11").classed("hidden", true);
 					d3.select("option#month-12").classed("hidden", true);
 				}
 

@@ -253,13 +253,23 @@ function loadData(fileDate) {
 				}
 			})
 			d3.selectAll("select#year").on("change", () => {
-				if (document.getElementById("year-2018").selected === true) {
+				if (document.getElementById("year-2019").selected === true) {
+					d3.select("option#month-03").classed("hidden", true);
+					d3.select("option#month-04").classed("hidden", true);
+					d3.select("option#month-05").classed("hidden", true);
+					d3.select("option#month-06").classed("hidden", true);
+					d3.select("option#month-07").classed("hidden", true);
 					d3.select("option#month-08").classed("hidden", true);
 					d3.select("option#month-09").classed("hidden", true);
 					d3.select("option#month-10").classed("hidden", true);
 					d3.select("option#month-11").classed("hidden", true);
 					d3.select("option#month-12").classed("hidden", true);
-				} else if (document.getElementById("year-2018").selected === false) {
+				} else if (document.getElementById("year-2019").selected === false) {
+					d3.select("option#month-03").classed("hidden", false);
+					d3.select("option#month-04").classed("hidden", false);
+					d3.select("option#month-05").classed("hidden", false);
+					d3.select("option#month-06").classed("hidden", false);
+					d3.select("option#month-07").classed("hidden", false);
 					d3.select("option#month-08").classed("hidden", false);
 					d3.select("option#month-09").classed("hidden", false);
 					d3.select("option#month-10").classed("hidden", false);
